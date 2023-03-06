@@ -7,7 +7,7 @@ Victor Feng He, victorfeng2000@gmail.com, DeanEvil
 Jaden Guevara, officialjadenguevara@gmail.com, JGuevara626
 Kamil Skorupa, k.a.skorupa85@gmail.com, Kamil-S85
 
-## Star Quiz
+## 5 Initial Features
 
 ### Log-in / registration optional (Home Screen)
 To begin the app, we want the user to provide information for authorization (log-in). 
@@ -16,17 +16,40 @@ All this will lead towards the following important functions.
 
 ### Username textbox (Home Screen)
 Interacts with taken and banned username databases. 
-Submit button to submit and progress to next screen (info screen).
+Submit button to submit and progress to next (Info) screen.
 
 ### Hashing Passwords (Home Screen)
-Allows the encryption and decryption of 
-login passwords for the purpose of security.
+Allows the encryption and decryption of login passwords for the purpose of security.
 
 ### Theme Screen (Home Screen)
-This changes the background of the application.
+This allows the user to set the background of the application.
+
 ### Leaderboard (Home Screen)
-Allows users to see a specific leaderboard 
-(leaderboards for different categories of the quiz).
+Allows users to see a specific leaderboard (leaderboards for different modes of the quiz).
+
+## MVP (Minimal Viable Product) composed of 6 user stories
+
+### Home Screen - Guest Enter Name
+User launches app. Arrives at Home screen and may enter a guest name into textbox and click enter to proceed to next screen. Warning message triggered if user enters
+name stored in banned username database.
+
+### Info Screen
+User can read the setup and rules of the game and click OK to advance to next screen or Home to go back to Home screen.
+
+### Mode Select Screen
+User can select one of 6 game modes providing different number of questions, or go back to the Info or Home screens.
+
+### Question Screen - Answer
+User can pick 1 of 4 answers on the Question screen within a time limit and accumulate points if answered correctly. If no answer is picked in time the next question
+is displayed.
+
+### Question Screen - Lifeline
+User can click on any of 3 lifelines which provide different aid for the question. If they do not pick a lifeline during the quiz, bonus points are added to their
+total score.
+
+### Question Screen - Last Question
+User answers the last question and their total score is displayed to them on the next screen as well as their leaderboard placement and some stats comparing user to
+other players.
 
 ## Risks and Mitigation
 Risk of poor time management, which could result in late delivery of app or 
@@ -38,7 +61,7 @@ Group size decreases due to student(s) withdrawing from class.
 - Reassess the extra work that will need to be reassigned to remaining team members. 
 Reassess the timeline of future goals and adjust as needed.
 
-Copyright infringement accusations (star trek theme) app may be taken down.
+Copyright infringement accusations (Star Trek theme) app may be taken down.
 - Don’t name the app anything related to Star Trek and don’t monetize in order to keep it free use.
 
 Lack of understanding of Android app development, which could result in a subpar product
