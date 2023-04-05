@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">StarQuiz</string>
+    <string name="app_name">Star Quiz</string>
+    <string name="returnButtonText">Return</string>
+    <string name = "okButtonText">OK</string>
+    <string name="descriptionInfo_rules">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam risus tellus, molestie vitae mi id, tempus euismod est. Cras in libero eu lectus accumsan pulvinar quis sit amet nunc. Vivamus pellentesque risus dolor, id dapibus purus sollicitudin sed. Maecenas ac nunc at arcu pellentesque varius ut id odio.
+
+        Pellentesque convallis consequat est sed gravida. Phasellus sagittis congue semper. Suspendisse viverra eros sagittis dolor interdum dignissim id eu tellus. Suspendisse fermentum metus ac tellus porta porta. Suspendisse tempus varius arcu, id laoreet quam eleifend ut. Maecenas dignissim efficitur diam vitae scelerisque.
+    </string>
+    <string name = "info_rulesTitle">Info &amp; Rules</string>
 </resources>
