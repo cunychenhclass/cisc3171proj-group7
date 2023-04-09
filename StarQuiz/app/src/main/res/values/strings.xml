@@ -8,4 +8,11 @@
     </string>
     <string name="info_rulesTitle">Info &amp; Rules</string>
     <string name="leaderboard_select">Leaderboard Select</string>
+    <string name="mode_select">Mode Select</string>
+    <string name="_10">10</string>
+    <string name="_20">20</string>
+    <string name="_30">30</string>
+    <string name="_40">40</string>
+    <string name="_50">50</string>
+    <string name="_100">100</string>
 </resources>

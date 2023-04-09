@@ -7,23 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class ModeSelect extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_mode_select);
 
-        Button infoRulesButton = (Button)findViewById(R.id.infoRulesButton);
-
-        infoRulesButton.setOnClickListener(new View.OnClickListener() {
+        Button returnButton = findViewById(R.id.infoButton);
+        returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, InfoAndRulesActivity.class);
-
+            public void onClick(View v) {
+                Intent intent = new Intent(ModeSelect.this, InfoAndRulesActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }
