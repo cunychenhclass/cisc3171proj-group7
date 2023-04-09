@@ -21,7 +21,7 @@
     <!-- EditText for entering username -->
     <EditText
         android:id="@+id/usernameEditText"
-        android:layout_width="0dp"
+        android:layout_width="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Enter your username"
@@ -34,7 +34,7 @@
     <!-- Button to submit username and proceed to next screen -->
     <Button
         android:id="@+id/enterButton"
-        android:layout_width="0dp"
+        android:layout_width="10dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Enter"
@@ -46,7 +46,7 @@
     <!-- Button to navigate to Leaderboard Select screen -->
     <Button
         android:id="@+id/leaderboardsButton"
-        android:layout_width="0dp"
+        android:layout_width="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Leaderboards"
@@ -57,7 +57,7 @@
     <!-- Button to navigate to Info & Rules screen -->
     <Button
         android:id="@+id/infoRulesButton"
-        android:layout_width="0dp"
+        android:layout_width="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Info & Rules"
@@ -68,7 +68,7 @@
     <!-- Button to navigate to Themes screen -->
     <Button
         android:id="@+id/themesButton"
-        android:layout_width="0dp"
+        android:layout_width="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Themes"
