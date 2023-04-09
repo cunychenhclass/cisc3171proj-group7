@@ -15,7 +15,7 @@ import java.util.TreeSet;
 import java.util.Set;
 
 // MainActivity base class for activities
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     // Private variables for EditText, username, and bannedUsernames
     private EditText usernameEditText;
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
         // Find views by their ID in layout and assign them to variables
         TextView appName = findViewById(R.id.appName);
