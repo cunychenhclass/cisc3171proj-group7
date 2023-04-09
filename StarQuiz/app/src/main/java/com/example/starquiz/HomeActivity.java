@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.Set;
 
 // MainActivity base class for activities
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Button themesButton = findViewById(R.id.themesButton);
 
         // Initialize bannedUsernames set
-        bannedUsernames = new HashSet<>();
+        bannedUsernames = new TreeSet<>();
         // bannedUsername DB implementation here
 
         // Set onClickListener for enterButton to handle user clicks
