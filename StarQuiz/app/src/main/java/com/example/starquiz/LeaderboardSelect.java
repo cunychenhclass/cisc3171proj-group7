@@ -20,20 +20,21 @@ public class LeaderboardSelect extends AppCompatActivity {
     ArrayList<LeaderboardArrayList> cate50 = new ArrayList<>();
     ArrayList<LeaderboardArrayList> cate100 = new ArrayList<>();
 
-    Button leaderboard10 = (Button)findViewById(R.id.button10Leaderboard);
-    Button leaderboard20 = (Button)findViewById(R.id.button20Leaderboard);
-    Button leaderboard30 = (Button)findViewById(R.id.button30Leaderboard);
-    Button leaderboard40 = (Button)findViewById(R.id.button40Leaderboard);
-    Button leaderboard50 = (Button)findViewById(R.id.button50Leaderboard);
-    Button leaderboard100 = (Button)findViewById(R.id.button100Leaderboard);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard_select);
 
-        ImageButton ReturnButton = (ImageButton)findViewById(R.id.returnButtonLeaderboard);
-        ReturnButton.setOnClickListener(new View.OnClickListener() {
+        Button leaderboard10 = (Button)findViewById(R.id.button10Leaderboard);
+        Button leaderboard20 = (Button)findViewById(R.id.button20Leaderboard);
+        Button leaderboard30 = (Button)findViewById(R.id.button30Leaderboard);
+        Button leaderboard40 = (Button)findViewById(R.id.button40Leaderboard);
+        Button leaderboard50 = (Button)findViewById(R.id.button50Leaderboard);
+        Button leaderboard100 = (Button)findViewById(R.id.button100Leaderboard);
+
+        ImageButton returnButton = (ImageButton)findViewById(R.id.returnButtonLeaderboard);
+        returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Intent intent = new Intent(LeaderboardSelect.this, loginscreen.class);
