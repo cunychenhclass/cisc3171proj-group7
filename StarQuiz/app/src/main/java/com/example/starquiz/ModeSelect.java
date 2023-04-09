@@ -15,6 +15,7 @@ public class ModeSelect extends AppCompatActivity {
         setContentView(R.layout.activity_mode_select);
 
         Button returnButton = findViewById(R.id.infoButton);
+        //returnButton should go to the Info and Rules screen
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
