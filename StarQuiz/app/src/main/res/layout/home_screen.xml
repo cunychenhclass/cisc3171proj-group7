@@ -10,8 +10,8 @@
     <!-- TextView for displaying app name -->
     <TextView
         android:id="@+id/appName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:text="Star Quiz"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +21,8 @@
     <!-- EditText for entering username -->
     <EditText
         android:id="@+id/usernameEditText"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:layout_marginTop="16dp"
         android:hint="Enter your username"
         android:inputType="text"
@@ -34,8 +34,8 @@
     <!-- Button to submit username and proceed to next screen -->
     <Button
         android:id="@+id/enterButton"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:layout_marginStart="8dp"
         android:text="Enter"
         app:layout_constraintBaseline_toBaselineOf="@id/usernameEditText"
@@ -46,8 +46,8 @@
     <!-- Button to navigate to Leaderboard Select screen -->
     <Button
         android:id="@+id/leaderboardsButton"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:layout_marginTop="16dp"
         android:text="Leaderboards"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,8 +57,8 @@
     <!-- Button to navigate to Info & Rules screen -->
     <Button
         android:id="@+id/infoRulesButton"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:layout_marginTop="16dp"
         android:text="Info & Rules"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,8 +68,8 @@
     <!-- Button to navigate to Themes screen -->
     <Button
         android:id="@+id/themesButton"
-        android:layout_width="10dp"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
         android:layout_marginTop="16dp"
         android:text="Themes"
         app:layout_constraintEnd_toEndOf="parent"
