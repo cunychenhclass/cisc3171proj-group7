@@ -12,6 +12,9 @@
         android:theme="@style/Theme.StarQuiz"
         tools:targetApi="31">
         <activity
+            android:name=".Countdown"
+            android:exported="false" />
+        <activity
             android:name=".LeaderboardSelect"
             android:exported="false" />
         <activity

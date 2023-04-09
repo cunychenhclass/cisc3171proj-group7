@@ -18,6 +18,7 @@ public class InfoAndRulesActivity extends AppCompatActivity {
 
         Button returnButton = (Button)findViewById(R.id.returnButton);
 
+        // Return to home page and finish activity
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +37,7 @@ public class InfoAndRulesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(InfoAndRulesActivity.this, ModeSelect.class);
+                intent.putExtras(extras);
                 startActivity(intent);
             }
         });

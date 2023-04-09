@@ -37,9 +37,7 @@ public class LeaderboardSelect extends AppCompatActivity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(LeaderboardSelect.this, loginscreen.class);
-
-                //startActivity(intent);
+                finish();
             }
         });
 
