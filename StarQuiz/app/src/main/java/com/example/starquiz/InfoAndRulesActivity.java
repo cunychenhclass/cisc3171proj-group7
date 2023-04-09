@@ -29,7 +29,7 @@ public class InfoAndRulesActivity extends AppCompatActivity {
 
         // To prevent the user from getting into the quiz without logging in
         if (extras == null || !extras.containsKey("username")) {
-            okButton.setVisibility(View.INVISIBLE);
+            okButton.setVisibility(View.GONE);
         }
 
         okButton.setOnClickListener(new View.OnClickListener() {
