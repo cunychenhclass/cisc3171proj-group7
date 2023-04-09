@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.home_screen);
 
         // Find views by their ID in layout and assign them to variables
         TextView appName = findViewById(R.id.appName);
@@ -66,8 +66,8 @@ public class HomeActivity extends AppCompatActivity {
         leaderboardsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, LeaderboardSelectActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(HomeActivity.this, LeaderboardSelectActivity.class);
+               // startActivity(intent);
             }
         });
 
@@ -84,8 +84,8 @@ public class HomeActivity extends AppCompatActivity {
         themesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ThemesActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(HomeActivity.this, ThemesActivity.class);
+               // startActivity(intent);
             }
         });
     }
