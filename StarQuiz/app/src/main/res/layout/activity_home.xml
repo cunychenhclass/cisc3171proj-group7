@@ -1,36 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- The root layout is a ConstraintLayout, which allows positioning and sizing widgets in a flexible way -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/appBackground"
+    android:padding="16dp"
     tools:context=".HomeActivity">
 
+    <!-- TextView for displaying the app name -->
     <TextView
+        android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textColor="#FFFFFF"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Star Quiz"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- EditText for entering the username -->
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter your username"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/enterButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appName"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <!-- Button to submit the username and proceed to the next screen -->
+    <Button
+        android:id="@+id/enterButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Enter"
+        app:layout_constraintBaseline_toBaselineOf="@id/usernameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/usernameEditText"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <!-- Button to navigate to the Leaderboard Select screen -->
+    <Button
+        android:id="@+id/leaderboardsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Leaderboards"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usernameEditText" />
+
+    <!-- Button to navigate to the Info & Rules screen -->
     <Button
         android:id="@+id/infoRulesButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="172dp"
-        android:width="300dp"
-        android:height="59dp"
-        android:backgroundTint="@color/buttonBackground"
-        android:text="@string/info_rulesTitle"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="Info & Rules"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/leaderboardsButton" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Button to navigate to the Themes screen -->
+    <Button
+        android:id="@+id/themesButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Themes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoRulesButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout
