@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,37 +23,37 @@ public class ModeSelect extends AppCompatActivity {
         Button returnButton = findViewById(R.id.infoButton);
 
 
-        List<HighlightButton> modes = new ArrayList<>();
+        List<Button> modes = new ArrayList<>();
 
-        // create and add 6 buttons to the list
-        HighlightButton button1 = findViewById(R.id.mode10);
+        // create and add 6 buttons(modes) to the list
+        Button button1 = findViewById(R.id.mode10);
         modes.add(button1);
-        HighlightButton button2 = findViewById(R.id.mode20);
+        Button button2 = findViewById(R.id.mode20);
         modes.add(button2);
-        HighlightButton button3 = findViewById(R.id.mode30);
+        Button button3 = findViewById(R.id.mode30);
         modes.add(button3);
-        HighlightButton button4 = findViewById(R.id.mode40);
+        Button button4 = findViewById(R.id.mode40);
         modes.add(button4);
-        HighlightButton button5 = findViewById(R.id.mode50);
+        Button button5 = findViewById(R.id.mode50);
         modes.add(button5);
-        HighlightButton button6 = findViewById(R.id.mode100);
+        Button button6 = findViewById(R.id.mode100);
         modes.add(button6);
+        Button confirm = findViewById(R.id.confirm);
 
         // set the OnClickListener for each button to a single object
         View.OnClickListener buttonClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (HighlightButton button : modes) {
-                    button.setHighlighted(button == v);
+                for (Button button : modes) {
+                    button.setActivated(button == v);
                 }
             }
         };
 
-        for (HighlightButton button : modes) {
+        //This creates a buttonClickListener for each button in the list.
+        for (Button button : modes) {
             button.setOnClickListener(buttonClickListener);
         }
-
-        Button confirm = findViewById(R.id.confirm);
 
         //returnButton should go to the Info and Rules screen
         returnButton.setOnClickListener(new View.OnClickListener() {
@@ -66,30 +67,20 @@ public class ModeSelect extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ModeSelect.this, InfoAndRulesActivity.class);
-                startActivity(intent);
+                Button selectedButton = null;
+                for (Button button : modes) {
+                    if (button.isActivated()) {       //Checks if the button was tapped on or highlighted
+                        selectedButton = button;
+                        break;
+                    }
+                }
+                if (selectedButton != null) {
+                    Intent intent = new Intent(ModeSelect.this, InfoAndRulesActivity.class); //This should start the highlighted mode when ok is pressed.
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "You must select a mode", Toast.LENGTH_LONG).show(); //If a mode isn't selected, tell the user to pick something.
+                }
             }
         });
-    }
-}
-
-class HighlightButton extends AppCompatButton {
-    private boolean isHighlighted;
-
-    public HighlightButton(Context context) {
-        super(context);
-        isHighlighted = false;
-    }
-
-    public boolean isHighlighted() {
-        return isHighlighted;
-    }
-
-    public void setHighlighted(boolean highlighted) {
-        isHighlighted = highlighted;
-        updateBackground(); // call a method to update the button's background based on the highlight state
-    }
-
-    private void updateBackground() {
     }
 }
