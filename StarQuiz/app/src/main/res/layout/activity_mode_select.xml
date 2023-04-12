@@ -23,8 +23,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.062" />
 
-    <Button
-        android:id="@+id/button3"
+    <com.example.starquiz.HighlightButton
+        android:id="@+id/mode10"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:layout_marginBottom="12dp"
@@ -33,67 +33,67 @@
         android:text="@string/_10"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/mode20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ModeSelectTitle"
         app:layout_constraintVertical_bias="0.636" />
 
-    <Button
-        android:id="@+id/button4"
+    <com.example.starquiz.HighlightButton
+        android:id="@+id/mode20"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:layout_marginBottom="12dp"
         android:background="#777EBC"
         android:text="@string/_20"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/mode30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
+    <com.example.starquiz.HighlightButton
+        android:id="@+id/mode30"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:layout_marginBottom="12dp"
         android:background="#777EBC"
         android:text="@string/_30"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/mode40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+    <com.example.starquiz.HighlightButton
+        android:id="@+id/mode40"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:layout_marginBottom="12dp"
         android:background="#777EBC"
         android:text="@string/_40"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintBottom_toTopOf="@+id/mode50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button6"
+    <com.example.starquiz.HighlightButton
+        android:id="@+id/mode50"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:layout_marginBottom="12dp"
         android:background="#777EBC"
         android:text="@string/_50"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/mode100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button5"
+    <com.example.starquiz.HighlightButton
+        android:id="@+id/mode100"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:layout_marginBottom="72dp"
@@ -113,12 +113,12 @@
         android:layout_marginBottom="16dp"
         android:text="@string/returnButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintEnd_toStartOf="@+id/confirm"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
