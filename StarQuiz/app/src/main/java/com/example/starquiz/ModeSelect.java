@@ -1,11 +1,8 @@
 package com.example.starquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +21,7 @@ public class ModeSelect extends AppCompatActivity {
         setContentView(R.layout.activity_mode_select);
 
 
-        Button returnButton = findViewById(R.id.infoButton);
+        Button returnButton = findViewById(R.id.ModeToInfoReturn);
 
         // create and add 6 buttons(modes) to the list
         Button mode10 = findViewById(R.id.mode10);
@@ -40,7 +37,7 @@ public class ModeSelect extends AppCompatActivity {
         Button mode100 = findViewById(R.id.mode100);
         modes.add(mode100);
 
-        Button confirm = findViewById(R.id.confirm);
+        Button confirm = findViewById(R.id.modeSelectOk);
 
         //Each of the following mode buttons ensures that when tapping on a button, the button is activated and
         //highlighted with colorChange while deactivating all
@@ -137,7 +134,7 @@ public class ModeSelect extends AppCompatActivity {
             }
         });
 
-        Button okButton = findViewById(R.id.button8);
+        Button okButton = findViewById(R.id.modeSelectOk);
 
         okButton.setOnClickListener(new View.OnClickListener() {
 
@@ -159,7 +156,8 @@ public class ModeSelect extends AppCompatActivity {
                     }
                 }
                 if (selectedButton != null) {
-                    Intent intent = new Intent(ModeSelect.this, InfoAndRulesActivity.class); //This should start the highlighted mode when ok is pressed.
+                    Intent intent = new Intent(ModeSelect.this, Countdown.class); //This should start the highlighted mode when ok is pressed.
+                    intent.putExtras(getIntent());
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "You must select a mode", Toast.LENGTH_LONG).show(); //If a mode isn't selected, tell the user to pick something.
