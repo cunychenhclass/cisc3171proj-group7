@@ -84,8 +84,8 @@ public class HomeActivity extends AppCompatActivity {
         themesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               //Intent intent = new Intent(HomeActivity.this, ThemesActivity.class);
-               //startActivity(intent);
+               Intent intent = new Intent(HomeActivity.this, ModeSelect.class);
+               startActivity(intent);
             }
         });
     }
