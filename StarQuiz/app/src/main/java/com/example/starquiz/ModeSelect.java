@@ -41,6 +41,9 @@ public class ModeSelect extends AppCompatActivity {
 
         Button confirm = findViewById(R.id.confirm);
 
+        //Each of the following mode buttons ensures that when tapping on a button, the button is activated and
+        //highlighted with colorChange while deactivating all
+        //other buttons
         mode10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -153,6 +156,8 @@ public class ModeSelect extends AppCompatActivity {
             }
         });
     }
+
+    //for loop will change all other mode buttons to original color while highlighting the selected button with purple_200
     public void colorChange(Button category_)
     {
         for (Button b: modes) {
