@@ -46,6 +46,7 @@ public class ModeSelect extends AppCompatActivity {
             public void onClick(View v) {
                 for (Button button : modes) {
                     button.setActivated(button == v);
+                    button.setBackgroundColor();
                 }
             }
         };
