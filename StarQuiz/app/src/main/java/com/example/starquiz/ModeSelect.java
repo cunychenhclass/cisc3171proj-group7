@@ -16,6 +16,8 @@ import java.util.List;
 
 public class ModeSelect extends AppCompatActivity {
 
+    List<Button> modes = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,41 +25,105 @@ public class ModeSelect extends AppCompatActivity {
 
         Button returnButton = findViewById(R.id.infoButton);
 
-
-        List<Button> modes = new ArrayList<>();
-
         // create and add 6 buttons(modes) to the list
-        Button button1 = findViewById(R.id.mode10);
-        modes.add(button1);
-        Button button2 = findViewById(R.id.mode20);
-        modes.add(button2);
-        Button button3 = findViewById(R.id.mode30);
-        modes.add(button3);
-        Button button4 = findViewById(R.id.mode40);
-        modes.add(button4);
-        Button button5 = findViewById(R.id.mode50);
-        modes.add(button5);
-        Button button6 = findViewById(R.id.mode100);
-        modes.add(button6);
+        Button mode10 = findViewById(R.id.mode10);
+        modes.add(mode10);
+        Button mode20 = findViewById(R.id.mode20);
+        modes.add(mode20);
+        Button mode30 = findViewById(R.id.mode30);
+        modes.add(mode30);
+        Button mode40 = findViewById(R.id.mode40);
+        modes.add(mode40);
+        Button mode50 = findViewById(R.id.mode50);
+        modes.add(mode50);
+        Button mode100 = findViewById(R.id.mode100);
+        modes.add(mode100);
+
         Button confirm = findViewById(R.id.confirm);
 
-        // set the OnClickListener for each button to a single object
-        View.OnClickListener buttonClickListener = new View.OnClickListener() {
+        mode10.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                for (Button button : modes) {
-                    button.setActivated(button == v);
-                    if (button.isActivated()) {
-                        button.setBackgroundColor(Color.rgb(255, 255, 255));
-                    }
-                }
-            }
-        };
+            public void onClick(View view) {
+                mode10.setActivated(true);
+                mode20.setActivated(false);
+                mode30.setActivated(false);
+                mode40.setActivated(false);
+                mode50.setActivated(false);
+                mode100.setActivated(false);
 
-        //This creates a buttonClickListener for each button in the list.
-        for (Button button : modes) {
-            button.setOnClickListener(buttonClickListener);
-        }
+                colorChange(mode10);
+            }
+        });
+
+        mode20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mode10.setActivated(false);
+                mode20.setActivated(true);
+                mode30.setActivated(false);
+                mode40.setActivated(false);
+                mode50.setActivated(false);
+                mode100.setActivated(false);
+
+                colorChange(mode20);
+            }
+        });
+
+        mode30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mode10.setActivated(false);
+                mode20.setActivated(false);
+                mode30.setActivated(true);
+                mode40.setActivated(false);
+                mode50.setActivated(false);
+                mode100.setActivated(false);
+
+                colorChange(mode30);
+            }
+        });
+
+        mode40.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mode10.setActivated(false);
+                mode20.setActivated(false);
+                mode30.setActivated(false);
+                mode40.setActivated(true);
+                mode50.setActivated(false);
+                mode100.setActivated(false);
+
+                colorChange(mode40);
+            }
+        });
+
+        mode50.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mode10.setActivated(false);
+                mode20.setActivated(false);
+                mode30.setActivated(false);
+                mode40.setActivated(false);
+                mode50.setActivated(true);
+                mode100.setActivated(false);
+
+                colorChange(mode50);
+            }
+        });
+
+        mode100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mode10.setActivated(false);
+                mode20.setActivated(false);
+                mode30.setActivated(false);
+                mode40.setActivated(false);
+                mode50.setActivated(false);
+                mode100.setActivated(true);
+
+                colorChange(mode100);
+            }
+        });
 
         //returnButton should go to the Info and Rules screen
         returnButton.setOnClickListener(new View.OnClickListener() {
@@ -86,5 +152,13 @@ public class ModeSelect extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void colorChange(Button category_)
+    {
+        for (Button b: modes) {
+            b.setBackgroundColor(getResources().getColor(R.color.buttonBackground));
+        }
+
+        category_.setBackgroundColor(getResources().getColor(R.color.purple_200));
     }
 }
