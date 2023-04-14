@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
                 username = usernameEditText.getText().toString().trim();
 
                 // Check if entered username is valid
-                if (isValidUsername(username)) {
+                if (isValidUsername(username) && username.length() >= 3 &&  username.length() <= 25) {
                     // If username is valid create an intent to navigate to the InfoAndRulesActivity
                     Intent intent = new Intent(HomeActivity.this, InfoAndRulesActivity.class);
                     // Pass username to next activity using intent.putExtra
