@@ -16,8 +16,9 @@ public class InfoAndRulesActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        Button returnButton = (Button)findViewById(R.id.returnButton);
+        Button returnButton = (Button)findViewById(R.id.infoAndRulesReturnButton);
 
+        // Return to home page and finish activity
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,17 +26,18 @@ public class InfoAndRulesActivity extends AppCompatActivity {
             }
         });
 
-        Button okButton = (Button)findViewById(R.id.okButton);
+        Button okButton = (Button)findViewById(R.id.infoAndRulesOkButton);
 
         // To prevent the user from getting into the quiz without logging in
         if (extras == null || !extras.containsKey("username")) {
-            okButton.setVisibility(View.INVISIBLE);
+            okButton.setVisibility(View.GONE);
         }
 
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(InfoAndRulesActivity.this, ModeSelect.class);
+                intent.putExtras(extras);
                 startActivity(intent);
             }
         });
