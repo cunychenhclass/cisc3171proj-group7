@@ -15,4 +15,6 @@
     <string name="_40">40</string>
     <string name="_50">50</string>
     <string name="_100">100</string>
+    <string name="specificLeaderTitle">100 Questions Leaderboard</string>
+    <string name="returnHome">Return Home</string>
 </resources>

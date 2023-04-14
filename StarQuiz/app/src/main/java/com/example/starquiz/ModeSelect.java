@@ -14,11 +14,22 @@ public class ModeSelect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mode_select);
 
+
         Button returnButton = findViewById(R.id.infoButton);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ModeSelect.this, InfoAndRulesActivity.class);
+                finish();
+            }
+        });
+
+        Button okButton = findViewById(R.id.button8);
+
+        okButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ModeSelect.this, Countdown.class);
                 startActivity(intent);
             }
         });

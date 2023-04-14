@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/appBackground"
     android:padding="16dp"
     tools:context=".HomeActivity">
 
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Star Quiz"
         android:textSize="24sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,6 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Enter your username"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/enterButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Enter"
+        android:backgroundTint="@color/buttonBackground"
         app:layout_constraintBaseline_toBaselineOf="@id/usernameEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/usernameEditText"
@@ -50,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Leaderboards"
+        android:backgroundTint="@color/buttonBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/usernameEditText" />
@@ -61,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/info_rulesTitle"
+        android:backgroundTint="@color/buttonBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/leaderboardsButton" />
@@ -72,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Themes"
+        android:backgroundTint="@color/buttonBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/infoRulesButton" />
