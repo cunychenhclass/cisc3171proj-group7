@@ -43,6 +43,7 @@ public class LeaderboardSelect extends AppCompatActivity {
         buttonsList.add(leaderboard50);
         buttonsList.add(leaderboard100);
 
+
         ImageButton returnButton = (ImageButton)findViewById(R.id.returnButtonLeaderboard);
         Button selectButton = (Button)findViewById(R.id.nextLeaderboardSelectButton);
         returnButton.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +105,9 @@ public class LeaderboardSelect extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //use category int
+                Intent intent = new Intent(LeaderboardSelect.this, SpecificLeaderboard.class);
+                intent.putExtra("LeaderboardCategory", categoryusing);
+                startActivity(intent);
             }
         });
 
