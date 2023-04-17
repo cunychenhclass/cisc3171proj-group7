@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class SpecificLeaderboard extends AppCompatActivity {
 
     String currUser;
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +26,21 @@ public class SpecificLeaderboard extends AppCompatActivity {
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
 
+        title = findViewById(R.id.SpecificLeaderBoardTitleText);
+
         Bundle extras = getIntent().getExtras();
+
+        String currMode = extras.get("LeaderboardCategory").toString();
+
+        title.setText(currMode + " Questions Leaderboard");
 
         currUser = "Max";
 
         // Populating the leaderboard with dummy data
         // It should be using the database once its implemented
         mainLeaderboard.addView(createNewRow(1, "Max", 1000000, "00:05:30"));
-        for (int i = 2; i <= 100; i++) {
-            mainLeaderboard.addView(createNewRow(i, "Test User", 500, "00:05:30"));
+        for (int i = 1; i <= 100; i++) {
+            mainLeaderboard.addView(createNewRow(i+1,"Test User", 10000 - i * 100, "00:05:30"));
         }
         // Return to leaderboard select screen
         returnButton.setOnClickListener(new View.OnClickListener() {
