@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class SpecificLeaderboard extends AppCompatActivity {
 
+    String currUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +24,18 @@ public class SpecificLeaderboard extends AppCompatActivity {
         Button returnButton = findViewById(R.id.specificLeaderboardReturnButton);
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
-        for (int i = 1; i <= 100; i++) {
+
+        Bundle extras = getIntent().getExtras();
+
+        currUser = "Max";
+
+        // Populating the leaderboard with dummy data
+        // It should be using the database once its implemented
+        mainLeaderboard.addView(createNewRow(1, "Max", 1000000, "00:05:30"));
+        for (int i = 2; i <= 100; i++) {
             mainLeaderboard.addView(createNewRow(i, "Test User", 500, "00:05:30"));
         }
+        // Return to leaderboard select screen
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,6 +44,7 @@ public class SpecificLeaderboard extends AppCompatActivity {
         });
     }
 
+    // Creates a new row for the leaderboard and setting the format of the textviews
     public TableRow createNewRow(int rank, String name, long score, String time) {
         TableRow row = new TableRow(this);
 
@@ -40,35 +53,30 @@ public class SpecificLeaderboard extends AppCompatActivity {
         TextView scoreText = new TextView(this);
         TextView timeText = new TextView(this);
 
-        rankText.setBackgroundResource(R.drawable.border);
-        nameText.setBackgroundResource(R.drawable.border);
-        scoreText.setBackgroundResource(R.drawable.border);
-        timeText.setBackgroundResource(R.drawable.border);
-
         rankText.setText(Integer.toString(rank));
         nameText.setText(name);
         scoreText.setText(Long.toString(score));
         timeText.setText(time);
 
-        rankText.setTextColor(getColor(R.color.white));
-        nameText.setTextColor(getColor(R.color.white));
-        scoreText.setTextColor(getColor(R.color.white));
-        timeText.setTextColor(getColor(R.color.white));
+        ArrayList<TextView> rowData = new ArrayList<TextView>();
+        rowData.add(rankText);
+        rowData.add(nameText);
+        rowData.add(scoreText);
+        rowData.add(timeText);
 
-        rankText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        nameText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        scoreText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-        timeText.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        for (TextView text : rowData) {
+            text.setBackgroundResource(R.drawable.border);
 
-        rankText.setTextSize(18f);
-        nameText.setTextSize(18f);
-        scoreText.setTextSize(18f);
-        timeText.setTextSize(18f);
+            if (currUser.equals(name)) {
+                text.setTextColor(getColor(R.color.yellow));
+            } else {
+                text.setTextColor(getColor(R.color.white));
+            }
 
-        row.addView(rankText);
-        row.addView(nameText);
-        row.addView(scoreText);
-        row.addView(timeText);
+            text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            text.setTextSize(18f);
+            row.addView(text);
+        }
         return row;
     }
 }
