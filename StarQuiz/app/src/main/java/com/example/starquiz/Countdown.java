@@ -60,6 +60,9 @@ public class Countdown extends AppCompatActivity {
                     fadeInAnimation(oneText);
                 } else {
                     Log.i("Countdown", "Should move to next screen here");
+                    Intent intent = new Intent(Countdown.this, QuestionAnswerActivity.class);
+                    intent.putExtras(getIntent());
+                    startActivity(intent);
                 }
             }
 
