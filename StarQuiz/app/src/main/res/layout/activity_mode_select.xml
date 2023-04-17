@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.062" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/mode10"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:layout_marginTop="56dp"
@@ -32,67 +32,71 @@
         android:text="@string/_10"
         android:textColor="#FFFFFF"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/mode20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ModeSelectTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/ModeSelectTitle"
+        app:layout_constraintVertical_bias="0.968" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/mode20"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/_20"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/mode30"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/mode30"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/_30"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/mode40"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/mode40"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/_40"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/mode50"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/mode50"
         android:layout_width="300dp"
         android:layout_height="73dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/_50"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/mode100"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/mode100"
         android:layout_width="300dp"
         android:layout_height="73dp"
+        android:layout_marginBottom="72dp"
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/_100"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/modeSelectOk"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/infoButton"
+        android:id="@+id/ModeToInfoReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="192dp"
@@ -100,12 +104,12 @@
         android:backgroundTint="@color/buttonBackground"
         android:text="@string/returnButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintEnd_toStartOf="@+id/modeSelectOk"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/modeSelectOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
