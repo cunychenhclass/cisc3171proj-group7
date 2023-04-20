@@ -33,8 +33,10 @@ public class SpecificLeaderboard extends AppCompatActivity {
         score = bundle.getIntArray("ScoreList");
         time = bundle.getFloatArray("TimeList");
 
+
         if(time != null)
         {
+            timeString = new String[time.length];
             for (int i = 0; i < time.length; i++) {
                 timeString[i] = Float.toString(time[i]);
             }
@@ -43,14 +45,14 @@ public class SpecificLeaderboard extends AppCompatActivity {
 
         
         Button returnButton = findViewById(R.id.specificLeaderboardReturnButton);
-       TextView categoryName = findViewById(R.id.SpecificLeaderBoardSelectTitle);
+        TextView categoryName = findViewById(R.id.SpecificLeaderBoardSelectTitle);
         categoryName.setText(categoryNum + " Questions Leaderboard");
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
         if(score != null)
         {
             for (int i = 0; i < username.length; i++) {
-                mainLeaderboard.addView(createNewRow(i + 1, username[i], score[i], "99:99:99"));
+                mainLeaderboard.addView(createNewRow(i + 1, username[i], score[i], timeString[i]));
             }
         }
 

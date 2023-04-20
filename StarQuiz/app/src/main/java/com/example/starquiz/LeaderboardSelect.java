@@ -24,7 +24,7 @@ public class LeaderboardSelect extends AppCompatActivity {
     LeaderboardArrayList cate100;
 
     ArrayList<Button> buttonsList = new ArrayList<>();
-    LeaderboardArrayList categoryusing;
+    LeaderboardArrayList categoryusing = new LeaderboardArrayList();
     int categoryNum;
     String[] username;
     int[] score;
@@ -120,9 +120,9 @@ public class LeaderboardSelect extends AppCompatActivity {
             }
         });
 
-//        username = categoryusing.username;
-//        score = categoryusing.score;
-//        time = categoryusing.time;
+        username = categoryusing.username;
+        score = categoryusing.score;
+        time = categoryusing.time;
 
         selectButton.setOnClickListener(new View.OnClickListener() {
             @Override
