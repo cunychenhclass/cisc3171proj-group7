@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -48,8 +44,10 @@ public class SpecificLeaderboard extends AppCompatActivity {
 
         
         Button returnButton = findViewById(R.id.specificLeaderboardReturnButton);
-        categoryName = findViewById(R.id.specificLeaderBoardTitleText);
+        categoryName = findViewById(R.id.specificLeaderboardTitleText);
         categoryName.setText(categoryNum + " Questions Leaderboard");
+
+        //TODO edit the title textview so that it doesn't expand all the way to the end of the screen
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
         currUser = "Kevin";
