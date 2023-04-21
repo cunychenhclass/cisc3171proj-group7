@@ -48,7 +48,7 @@ public class SpecificLeaderboard extends AppCompatActivity {
 
         
         Button returnButton = findViewById(R.id.specificLeaderboardReturnButton);
-        categoryName = findViewById(R.id.SpecificLeaderBoardSelectTitle);
+        categoryName = findViewById(R.id.specificLeaderBoardTitleText);
         categoryName.setText(categoryNum + " Questions Leaderboard");
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
