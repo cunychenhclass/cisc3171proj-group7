@@ -11,4 +11,5 @@
     <color name = "buttonBackground" >#777EBC</color>
     <color name = "titleBackground">#AC9132</color>
     <color name = "titleTextBackground">#25115F</color>
+    <color name="yellow">#FFFF00</color>
 </resources>
