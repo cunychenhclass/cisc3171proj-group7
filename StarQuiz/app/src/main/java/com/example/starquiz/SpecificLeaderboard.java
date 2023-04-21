@@ -2,47 +2,70 @@ package com.example.starquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class SpecificLeaderboard extends AppCompatActivity {
-
+    String[] username;
+    int[] score;
+    float[] time;
+    String[] timeString;
     String currUser;
-    TextView title;
+    TextView categoryName;
+    int categoryNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specific_leaderboard);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        categoryNum = bundle.getInt("categoryNum", categoryNum);
+        username = bundle.getStringArray("NamesList");
+        score = bundle.getIntArray("ScoreList");
+        time = bundle.getFloatArray("TimeList");
+
+
+        if(time != null)
+        {
+            timeString = new String[time.length];
+            for (int i = 0; i < time.length; i++) {
+                timeString[i] = Float.toString(time[i]);
+            }
+        }
+
+
+        
         Button returnButton = findViewById(R.id.specificLeaderboardReturnButton);
+        categoryName = findViewById(R.id.SpecificLeaderBoardSelectTitle);
+        categoryName.setText(categoryNum + " Questions Leaderboard");
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
-
-        title = findViewById(R.id.SpecificLeaderBoardTitleText);
-
-        Bundle extras = getIntent().getExtras();
-
-        String currMode = extras.get("LeaderboardCategory").toString();
-
-        title.setText(currMode + " Questions Leaderboard");
-
-        currUser = "Max";
-
+        currUser = "Kevin";
+        // Return to leaderboard select screen
+        if(score != null)
+        {
         // Populating the leaderboard with dummy data
         // It should be using the database once its implemented
-        mainLeaderboard.addView(createNewRow(1, "Max", 1000000, "00:05:30"));
-        for (int i = 1; i <= 100; i++) {
-            mainLeaderboard.addView(createNewRow(i+1,"Test User", 10000 - i * 100, "00:05:30"));
+            for (int i = 0; i < username.length; i++) {
+                mainLeaderboard.addView(createNewRow(i + 1, username[i], score[i], timeString[i]));
+            }
         }
-        // Return to leaderboard select screen
+
+//        for (int i = 1; i <= 100; i++) {
+//            mainLeaderboard.addView(createNewRow(i, "Test User", 500, "00:05:30"));
+//        }
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

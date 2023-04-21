@@ -20,9 +20,9 @@ import java.util.logging.Logger;
 
 public class Countdown extends AppCompatActivity {
 
-    TextView threeText;
-    TextView twoText;
-    TextView oneText;
+    private TextView threeText;
+    private TextView twoText;
+    private TextView oneText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
