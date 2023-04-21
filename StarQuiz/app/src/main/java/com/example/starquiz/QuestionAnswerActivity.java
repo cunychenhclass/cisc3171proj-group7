@@ -14,6 +14,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     private TextView scoreTextView;
     private TextView levelTextView;
     private TextView questionTextView;
+    private TextView userGreeting;
     private Button[] answerButtons = new Button[4];
     private Button[] lifelineButtons = new Button[6];
     private int score;
@@ -24,11 +25,18 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_answer);
 
+        Bundle extras = getIntent().getExtras();
+
         // Initialize views by ID
         timerTextView = findViewById(R.id.timer);
         scoreTextView = findViewById(R.id.score);
         levelTextView = findViewById(R.id.level);
         questionTextView = findViewById(R.id.question);
+        userGreeting = findViewById(R.id.questionAnswerUserGreeting);
+
+        userGreeting.setText("Hello " + extras.getString("username"));
+
+
         for (int i = 0; i < 4; i++) {
             int buttonId = getResources().getIdentifier("answer" + (i + 1), "id", getPackageName());
             answerButtons[i] = findViewById(buttonId);
