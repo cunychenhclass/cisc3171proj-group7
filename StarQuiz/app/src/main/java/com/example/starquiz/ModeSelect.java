@@ -130,7 +130,9 @@ public class ModeSelect extends AppCompatActivity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(ModeSelect.this, HomeActivity.class);
+                startActivity(intent);
+
             }
         });
 

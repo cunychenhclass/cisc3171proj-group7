@@ -28,4 +28,10 @@ public class ModeSelectTest {
         onView(withId(R.id.modeSelectOk)).perform(click());
     } //it will say it has failed since it does not start at home activity and input username however is working as intended
     //since the buttons are meant to transfer scenes and stop the user is requirements are not met
+
+    @Test
+    public void goHomeFromMode()
+    {
+        onView(withId(R.id.modeSelectOk)).perform(click());
+    }
 }
