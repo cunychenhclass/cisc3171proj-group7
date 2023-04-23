@@ -65,6 +65,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     // Handle answer selection and move to next question or end the quiz
+                    checkAnswer();
                 }
             });
         }
@@ -149,11 +150,21 @@ public class QuestionAnswerActivity extends AppCompatActivity {
 
     public void recheckAllButtons() //make sure to run this after choice is made/before next question is pulled
     {
-        for (Button button: answerButtons
-             ) {
+        for (Button button: answerButtons) {
             if(!button.isEnabled())
             {
                 button.setEnabled(true);
+            }
+        }
+    }
+
+    // Assigns background color to show the correct answer and incorrect answers
+    private void checkAnswer() {
+        for (Button button : answerButtons) {
+            if (button == trueAnswer) {
+                button.setBackgroundColor(getColor(R.color.green));
+            } else {
+                button.setBackgroundColor(getColor(R.color.red));
             }
         }
     }
