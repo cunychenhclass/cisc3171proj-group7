@@ -81,4 +81,8 @@ Having no creative designers for the design of what the app will look like that 
 ## Iteration Report:
 During this iteration, we were able to create the layouts for all of the user stories/screens that we would need to deliver our MVP.
 We also prioritized writing functional code for transitioning between the different screens as well as allowing the screens to retain
-user information. The user stories that are being prioritized in this iteration is Home Screen - Enter Guest Name, Information and Rules,
+user information. The user stories that are being prioritized in this iteration is "Home Screen - Enter Guest Name", "Info Screen",
+and "Home Screen - Leaderboard Select Screen." As of the time of this writing, we have not been able to complete "Question Screen - Lifeline,"
+"Question Screen - Answer," "Question Screen - Last Question," and "Specfic Leaderboard Screen." The other difficulty we faced is that most of our
+commits have not been marked in accordance to "Red-Green-Refactoring," as we didn't look at the assignment until we were already done with
+some of our user stories.
