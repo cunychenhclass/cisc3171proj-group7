@@ -15,6 +15,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     private TextView scoreTextView;
     private TextView levelTextView;
     private TextView questionTextView;
+    private TextView userGreeting;
     private Button[] answerButtons = new Button[4];
 
     private Button trueAnswer;
@@ -29,12 +30,19 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_answer);
 
+        Bundle extras = getIntent().getExtras();
+
         recheckButtons = false;
         // Initialize views by ID
         timerTextView = findViewById(R.id.timer);
         scoreTextView = findViewById(R.id.score);
         levelTextView = findViewById(R.id.level);
         questionTextView = findViewById(R.id.question);
+        userGreeting = findViewById(R.id.questionAnswerUserGreeting);
+
+        userGreeting.setText("Hello " + extras.getString("username"));
+
+
         for (int i = 0; i < 4; i++) {
             int buttonId = getResources().getIdentifier("answer" + (i + 1), "id", getPackageName());
             answerButtons[i] = findViewById(buttonId);
@@ -57,6 +65,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     // Handle answer selection and move to next question or end the quiz
+                    checkAnswer();
                 }
             });
         }
@@ -141,11 +150,21 @@ public class QuestionAnswerActivity extends AppCompatActivity {
 
     public void recheckAllButtons() //make sure to run this after choice is made/before next question is pulled
     {
-        for (Button button: answerButtons
-             ) {
+        for (Button button: answerButtons) {
             if(!button.isEnabled())
             {
                 button.setEnabled(true);
+            }
+        }
+    }
+
+    // Assigns background color to show the correct answer and incorrect answers
+    private void checkAnswer() {
+        for (Button button : answerButtons) {
+            if (button == trueAnswer) {
+                button.setBackgroundColor(getColor(R.color.green));
+            } else {
+                button.setBackgroundColor(getColor(R.color.red));
             }
         }
     }

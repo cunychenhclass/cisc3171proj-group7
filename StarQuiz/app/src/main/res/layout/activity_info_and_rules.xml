@@ -7,8 +7,6 @@
     android:background = "@color/appBackground"
     tools:context=".InfoAndRulesActivity">
 
-
-
     <Button
         android:id="@+id/infoAndRulesReturnButton"
         android:layout_width="wrap_content"
@@ -54,12 +52,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <TextView
         android:id="@+id/infoAndRulesTitleView"
-        android:layout_width="250dp"
-        android:layout_height="84dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="84dp"
+        android:minWidth="250dp"
         android:layout_marginTop="40dp"
         android:background="@color/titleBackground"
+        android:gravity="center"
+        android:text="@string/info_rulesTitle"
+        android:textColor="@color/titleTextBackground"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,5 +80,4 @@
         app:layout_constraintEnd_toEndOf="@+id/infoAndRulesTitleView"
         app:layout_constraintStart_toStartOf="@+id/infoAndRulesTitleView"
         app:layout_constraintTop_toTopOf="@+id/infoAndRulesTitleView" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

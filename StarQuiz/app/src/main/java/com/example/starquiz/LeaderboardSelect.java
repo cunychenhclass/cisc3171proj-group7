@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
@@ -23,15 +24,15 @@ public class LeaderboardSelect extends AppCompatActivity {
     LeaderboardArrayList cate100;
 
     ArrayList<Button> buttonsList = new ArrayList<>();
-    LeaderboardArrayList categoryusing;
+    LeaderboardArrayList categoryusing = new LeaderboardArrayList();
     int categoryNum;
-
+    String[] username;
+    int[] score;
+    float[] time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard_select);
-
-
 
         Button leaderboard10 = (Button)findViewById(R.id.button10Leaderboard);
         Button leaderboard20 = (Button)findViewById(R.id.button20Leaderboard);
@@ -46,6 +47,13 @@ public class LeaderboardSelect extends AppCompatActivity {
         buttonsList.add(leaderboard40);
         buttonsList.add(leaderboard50);
         buttonsList.add(leaderboard100);
+
+        if(categoryusing != null)
+        {
+            username = categoryusing.username;
+            score = categoryusing.score;
+            time = categoryusing.time;
+        }
 
         ImageButton returnButton = (ImageButton)findViewById(R.id.returnButtonLeaderboard);
         Button selectButton = (Button)findViewById(R.id.nextLeaderboardSelectButton);
@@ -62,6 +70,7 @@ public class LeaderboardSelect extends AppCompatActivity {
                 categoryusing = cate10;
                 colorChange(leaderboard10);
                 categoryNum = 10;
+
             }
         });
 
@@ -71,6 +80,7 @@ public class LeaderboardSelect extends AppCompatActivity {
                 categoryusing = cate20;
                 colorChange(leaderboard20);
                 categoryNum = 20;
+
             }
         });
 
@@ -110,16 +120,21 @@ public class LeaderboardSelect extends AppCompatActivity {
             }
         });
 
+        username = categoryusing.username;
+        score = categoryusing.score;
+        time = categoryusing.time;
+
         selectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //use category int
-                testStocks(categoryusing);
+                Bundle bundle = new Bundle();
                 Intent intent = new Intent(LeaderboardSelect.this, SpecificLeaderboard.class);
-                intent.putExtra("categoryNum", categoryNum);
-                intent.putStringArrayListExtra("NamesList", categoryusing.username);
-                intent.putIntegerArrayListExtra("ScoreList", categoryusing.score);
-                intent.putExtra("TimeList", categoryusing.time);
+                bundle.putInt("categoryNum", categoryNum);
+                bundle.putStringArray("NamesList", username);
+                bundle.putIntArray("ScoreList", score);
+                bundle.putFloatArray("TimeList", time);
+                intent.putExtras(bundle);
                 startActivity(intent);
 
             }
@@ -136,72 +151,69 @@ public class LeaderboardSelect extends AppCompatActivity {
         category_.setBackgroundColor(getResources().getColor(R.color.purple_200));
     }
 
-//    public void submitUser(LeaderboardArrayList category, String Username_, int Score_, float time_)
-//    {
-//        switch (category_)
-//        {
-//            case 10:
-//
-//                break;
-//            case 20:
-//                arrayListHandler(cate20, Username_, Score_, time_);
-//                break;
-//            case 30:
-//                arrayListHandler(cate30, Username_, Score_, time_);
-//                break;
-//            case 40:
-//                arrayListHandler(cate40, Username_, Score_, time_);
-//                break;
-//            case 50:
-//                arrayListHandler(cate50, Username_, Score_, time_);
-//                break;
-//            case 100:
-//                arrayListHandler(cate100, Username_, Score_, time_);
-//                break;
-//        }
-//    }
-
-    public void arrayListHandler(LeaderboardArrayList category, String Username_, int Score_, long time_)
+    public LeaderboardArrayList submitUser(int cat)
     {
-        for(int i = 0; i < category.username.size(); i++)
+        switch (cat)
         {
-            if(category.username.get(i) == Username_)
+            case 10:
+                return cate10;
+            case 20:
+                return cate20;
+            case 30:
+                return cate30;
+            case 40:
+                return cate40;
+            case 50:
+                return cate50;
+            case 100:
+                return cate100;
+        }
+        return null;
+    }
+
+    public void arrayListHandler(LeaderboardArrayList category, String Username_, int Score_, float time_)
+    {
+        for(int i = 0; i < category.username.length; i++)
+        {
+            if(category.username[i] == Username_)
             {
-                if(category.score.get(i) < Score_)
+                if(category.score[i] < Score_)
                 {
-                    category.score.set(i, Score_);
-                    category.time.set(i, time_);
+                    category.score[i] = Score_;
+                    category.time[i] = time_;
                 }
             }
             else
             {
-                category.username.add(Username_);
-                category.score.add(Score_);
-                category.time.add(time_);
+                category.username[category.username.length + 1] = Username_;
+                category.score[category.username.length + 1] = Score_;
+                category.time[category.username.length + 1] = time_;
             }
         }
     }
 
-    public void testStocks(LeaderboardArrayList category)
-    {
-        String[] names = { "kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"};
-        category.scrubArrays();
-        Random random = new Random();
-        for (int i = 0; i < names.length; i++)
-        {
-            arrayListHandler(category, names[i], random.nextInt(999), random.nextLong());
-        }
-
-    }
+//    public void testStocks(LeaderboardArrayList category)
+//    {
+//        String[] names = { "kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"};
+//        category.scrubArrays();
+//        Random random = new Random();
+//        for (int i = 0; i < names.length; i++)
+//        {
+//            arrayListHandler(category, names[i], random.nextInt(100), 500);
+//        }
+//
+//    }
 
 
 }
 
 class LeaderboardArrayList{ //used as a custom array type for the category lists
     int size = 10;
-    ArrayList<String> username = new ArrayList<>();
-    ArrayList<Integer> score = new ArrayList<>();
-    ArrayList<Long> time = new ArrayList<>();
+    String[] username = {"kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"};
+
+    int[] score = {1,2,3,4,5,6,7,8,9};
+
+    float[] time = {900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f};
 
     //final float[] arr = new float[time.size()];
 //    LeaderboardArrayList( String Username_, int Score_, float time_)
@@ -213,9 +225,9 @@ class LeaderboardArrayList{ //used as a custom array type for the category lists
 
     public void scrubArrays()
     {
-        username.clear();
-        score.clear();
-        time.clear();
+        username = null;
+        score = null;
+        time = null;
     }
 
 

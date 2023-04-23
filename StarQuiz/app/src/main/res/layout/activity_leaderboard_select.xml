@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/specificLeaderTitleBackground" />
+        app:layout_constraintTop_toBottomOf="@+id/specificLeaderboardTitleText" />
 
     <Button
         android:id="@+id/button20Leaderboard"
@@ -120,7 +120,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <View
-        android:id="@+id/specificLeaderTitleBackground"
+        android:id="@+id/specificLeaderboardTitleText"
         android:layout_width="250dp"
         android:layout_height="84dp"
         android:layout_marginTop="76dp"
@@ -138,11 +138,11 @@
         android:textAlignment="center"
         android:textColor="@color/titleTextBackground"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/specificLeaderTitleBackground"
-        app:layout_constraintEnd_toEndOf="@+id/specificLeaderTitleBackground"
+        app:layout_constraintBottom_toBottomOf="@+id/specificLeaderboardTitleText"
+        app:layout_constraintEnd_toEndOf="@+id/specificLeaderboardTitleText"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/specificLeaderTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/specificLeaderTitleBackground"
+        app:layout_constraintStart_toStartOf="@+id/specificLeaderboardTitleText"
+        app:layout_constraintTop_toTopOf="@+id/specificLeaderboardTitleText"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
