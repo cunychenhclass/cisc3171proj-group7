@@ -1,14 +1,15 @@
 package com.example.starquiz;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class SpecificLeaderboard extends AppCompatActivity {
         username = bundle.getStringArray("NamesList");
         score = bundle.getIntArray("ScoreList");
         time = bundle.getFloatArray("TimeList");
+        ImageButton homeButton = findViewById(R.id.specificLeaderboardHomeButton);
 
 
         if(time != null)
@@ -68,6 +70,14 @@ public class SpecificLeaderboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SpecificLeaderboard.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
     }
