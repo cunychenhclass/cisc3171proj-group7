@@ -38,7 +38,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toEndOf="@+id/infoAndRulesReturnButton" />
 
     <TextView
@@ -76,4 +76,5 @@
         app:layout_constraintEnd_toEndOf="@+id/infoAndRulesTitleView"
         app:layout_constraintStart_toStartOf="@+id/infoAndRulesTitleView"
         app:layout_constraintTop_toTopOf="@+id/infoAndRulesTitleView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,3 +77,9 @@ Having no creative designers for the design of what the app will look like that 
 - Learn how to create appealing designs through Youtube tutorials
 - Receive input from others on potential designs
 - Test out different designs and see what “feels” right.
+
+## Iteration Report:
+During this iteration, we were able to create the layouts for all of the user stories/screens that we would need to deliver our MVP.
+We also prioritized writing functional code for transitioning between the different screens as well as allowing the screens to retain
+user information. The user stories that are being prioritized in this iteration is Home Screen - Enter Guest Name, Information and Rules,
+
