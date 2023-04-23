@@ -215,13 +215,6 @@ class LeaderboardArrayList{ //used as a custom array type for the category lists
 
     float[] time = {900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f};
 
-    //final float[] arr = new float[time.size()];
-//    LeaderboardArrayList( String Username_, int Score_, float time_)
-//    { //holds the individual datas to find the users
-//        this.username.add(Username_);
-//        this.score.add(Score_);
-//        this.time.add(time_);
-//    }
 
     public void scrubArrays()
     {

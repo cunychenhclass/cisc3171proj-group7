@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class ModeSelect extends AppCompatActivity {
 
 
         Button returnButton = findViewById(R.id.ModeToInfoReturn);
+        ImageButton homeButton = findViewById(R.id.ModeSelectHomeButton);
 
         // create and add 6 buttons(modes) to the list
         Button mode10 = findViewById(R.id.mode10);
@@ -123,6 +125,15 @@ public class ModeSelect extends AppCompatActivity {
                 mode100.setActivated(true);
 
                 colorChange(mode100);
+            }
+        });
+
+        //homeButton returns user to the Home Screen
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ModeSelect.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
 
