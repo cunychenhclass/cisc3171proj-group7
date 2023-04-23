@@ -12,6 +12,7 @@
         android:layout_width="363dp"
         android:layout_height="88dp"
         android:background="#AC9132"
+        android:gravity="center"
         android:text="@string/mode_select"
         android:textAlignment="center"
         android:textColor="#25115F"

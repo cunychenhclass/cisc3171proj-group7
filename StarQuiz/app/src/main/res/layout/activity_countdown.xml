@@ -23,8 +23,8 @@
 
     <TextView
         android:id="@+id/threeCountdown"
-        android:layout_width="66dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:alpha="0.0"
         android:text="3"
         android:textAlignment="center"
@@ -37,8 +37,8 @@
 
     <TextView
         android:id="@+id/twoCountdown"
-        android:layout_width="66dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:alpha="0.0"
         android:text="2"
         android:textAlignment="center"
@@ -51,8 +51,8 @@
 
     <TextView
         android:id="@+id/oneCountdown"
-        android:layout_width="66dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
         android:alpha="0.0"
         android:text="1"

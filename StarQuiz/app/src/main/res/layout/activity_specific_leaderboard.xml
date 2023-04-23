@@ -7,30 +7,22 @@
     android:background="@color/appBackground"
     tools:context=".SpecificLeaderboard">
 
-    <View
-        android:id="@+id/specificLeaderTitleBackground"
-        android:layout_width="250dp"
-        android:layout_height="84dp"
+    <TextView
+        android:id="@+id/specificLeaderboardTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:background="@color/titleBackground"
+        android:gravity="center"
+        android:text="@string/specificLeaderTitle"
+        android:maxWidth="260dp"
+        android:textColor="@color/titleTextBackground"
+        android:textSize="36sp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/SpecificLeaderBoardSelectTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="250dp"
-        android:text="@string/specificLeaderTitle"
-        android:textAlignment="center"
-        android:textColor="@color/titleTextBackground"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/specificLeaderTitleBackground"
-        app:layout_constraintEnd_toEndOf="@+id/specificLeaderTitleBackground"
-        app:layout_constraintStart_toStartOf="@+id/specificLeaderTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/specificLeaderTitleBackground" />
 
     <ImageButton
         android:id="@+id/specificLeaderboardHomeButton"
@@ -44,119 +36,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 
-    <View
-        android:id="@+id/rankViewTitleBackground"
-        android:layout_width="31dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/specificLeaderTitleBackground" />
 
-    <TextView
-        android:id="@+id/rankViewTitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="#"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rankViewTitleBackground"
-        app:layout_constraintEnd_toEndOf="@+id/rankViewTitleBackground"
-        app:layout_constraintStart_toStartOf="@+id/rankViewTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/rankViewTitleBackground" />
-
-    <View
-        android:id="@+id/nameViewTitleBackground"
-        android:layout_width="131dp"
-        android:layout_height="57dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/rankViewTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/rankViewTitleBackground" />
-
-    <TextView
-        android:id="@+id/nameViewTitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@+id/nameViewTitleBackground"
-        app:layout_constraintEnd_toEndOf="@+id/nameViewTitleBackground"
-        app:layout_constraintStart_toStartOf="@+id/nameViewTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/nameViewTitleBackground" />
-
-    <View
-        android:id="@+id/scoreViewTitleBackground"
-        android:layout_width="112dp"
-        android:layout_height="57dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/nameViewTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/nameViewTitleBackground" />
-
-    <TextView
-        android:id="@+id/scoreViewTitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Score"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@+id/scoreViewTitleBackground"
-        app:layout_constraintEnd_toEndOf="@+id/scoreViewTitleBackground"
-        app:layout_constraintStart_toStartOf="@+id/scoreViewTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/scoreViewTitleBackground" />
-
-    <View
-        android:id="@+id/timeViewTitleBackground"
-        android:layout_width="88dp"
-        android:layout_height="57dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toEndOf="@+id/scoreViewTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/scoreViewTitleBackground" />
-
-    <TextView
-        android:id="@+id/timeViewTitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="@+id/timeViewTitleBackground"
-        app:layout_constraintEnd_toEndOf="@+id/timeViewTitleBackground"
-        app:layout_constraintStart_toStartOf="@+id/timeViewTitleBackground"
-        app:layout_constraintTop_toTopOf="@+id/timeViewTitleBackground" />
-
-    <View
-        android:id="@+id/rankViewBackground"
-        android:layout_width="31dp"
-        android:layout_height="300dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toStartOf="@+id/rankViewTitleBackground"
-        app:layout_constraintTop_toBottomOf="@+id/rankViewTitleBackground" />
-
-    <View
-        android:id="@+id/nameViewBackground"
-        android:layout_width="131dp"
-        android:layout_height="300dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toStartOf="@+id/nameViewTitleBackground"
-        app:layout_constraintTop_toBottomOf="@+id/nameViewTitleBackground" />
-
-    <View
-        android:id="@+id/scoreViewBackground"
-        android:layout_width="112dp"
-        android:layout_height="300dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toStartOf="@+id/scoreViewTitleBackground"
-        app:layout_constraintTop_toBottomOf="@+id/scoreViewTitleBackground" />
-
-    <View
-        android:id="@+id/timeViewBackground"
-        android:layout_width="88dp"
-        android:layout_height="300dp"
-        android:background="@drawable/border"
-        app:layout_constraintStart_toStartOf="@+id/timeViewTitleBackground"
-        app:layout_constraintTop_toBottomOf="@+id/timeViewTitleBackground" />
 
     <Button
         android:id="@+id/specificLeaderboardReturnButton"
@@ -172,5 +52,66 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="351dp"
+        android:layout_height="384dp"
+        app:layout_constraintBottom_toTopOf="@+id/specificLeaderboardReturnButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/specificLeaderboardTitleText">
+
+        <TableLayout
+            android:id="@+id/specificLeaderboardTable"
+            android:layout_width="351dp"
+            android:layout_height="384dp"
+            android:layout_marginBottom="36dp"
+            android:background="@color/appBackground"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="31dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/border"
+                    android:text="#"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/border"
+                    android:text="Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="112dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/border"
+                    android:text="Score"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:layout_width="88dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/border"
+                    android:text="Time"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,9 @@
             android:name=".SpecificLeaderboard"
             android:exported="false" />
         <activity
+            android:name=".QuestionAnswerActivity"
+            android:exported="false"/>
+        <activity
             android:name=".Countdown"
             android:exported="false" />
         <activity
