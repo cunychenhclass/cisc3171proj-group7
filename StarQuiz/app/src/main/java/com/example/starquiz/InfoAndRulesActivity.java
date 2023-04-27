@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import org.jetbrains.annotations.TestOnly;
+
 public class InfoAndRulesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_and_rules);
+
 
         Bundle extras = getIntent().getExtras();
 
@@ -42,4 +45,5 @@ public class InfoAndRulesActivity extends AppCompatActivity {
             }
         });
     }
+
 }
