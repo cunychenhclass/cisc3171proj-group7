@@ -14,6 +14,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class SpecificLeaderboard extends AppCompatActivity {
+
+        LeaderboardArrayList cate10;
+    LeaderboardArrayList cate20;
+    LeaderboardArrayList cate30;
+    LeaderboardArrayList cate40;
+    LeaderboardArrayList cate50;
+    LeaderboardArrayList cate100;
     String[] username;
     int[] score;
     float[] time;
@@ -21,17 +28,28 @@ public class SpecificLeaderboard extends AppCompatActivity {
     String currUser;
     TextView categoryName;
     int categoryNum;
+    LeaderboardArrayList categoryusing = new LeaderboardArrayList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specific_leaderboard);
 
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        categoryNum = bundle.getInt("categoryNum", categoryNum);
-        username = bundle.getStringArray("NamesList");
-        score = bundle.getIntArray("ScoreList");
-        time = bundle.getFloatArray("TimeList");
+        categoryNum = intent.getIntExtra("categoryNum", categoryNum);
+//        username = bundle.getStringArray("NamesList");
+//        score = bundle.getIntArray("ScoreList");
+//        time = bundle.getFloatArray("TimeList");
+
+        submitUser(categoryNum);
+
+        if(categoryusing != null)
+        {
+            username = categoryusing.username;
+            score = categoryusing.score;
+            time = categoryusing.time;
+        }
+
+
         ImageButton homeButton = findViewById(R.id.specificLeaderboardHomeButton);
 
 
@@ -117,5 +135,50 @@ public class SpecificLeaderboard extends AppCompatActivity {
         }
         return row;
     }
+
+    public void submitUser(int cat)
+    {
+        switch (cat)
+        {
+            case 10:
+                categoryusing = cate10;
+                break;
+            case 20:
+                categoryusing = cate20;
+                break;
+            case 30:
+                categoryusing = cate30;
+                break;
+            case 40:
+                categoryusing = cate40;
+                break;
+            case 50:
+                categoryusing = cate50;
+                break;
+            case 100:
+                categoryusing = cate100;
+                break;
+        }
+    }
+}
+
+
+class LeaderboardArrayList{ //used as a custom array type for the category lists
+    int size = 10;
+    String[] username = {"kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"};
+
+    int[] score = {1,2,3,4,5,6,7,8,9};
+
+    float[] time = {900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f};
+
+
+    public void scrubArrays()
+    {
+        username = null;
+        score = null;
+        time = null;
+    }
+
+
 }
 
