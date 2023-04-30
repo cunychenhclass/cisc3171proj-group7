@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class QuestionAnswerActivity extends AppCompatActivity {
 
     private TextView timerTextView;
+    private TextView graceTimerTextView;
     private TextView scoreTextView;
     private TextView levelTextView;
     private TextView questionTextView;
@@ -22,25 +23,29 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     private Button[] lifelineButtons = new Button[6];
     private int score;
     private int level;
-    private long timer;
     private boolean recheckButtons;
-
+    private boolean picking2 = false;
+    private boolean secondChancing = false;
+    private Button[] picking2Buttons = new Button[2];
+    private int buttonsPressed = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_answer);
 
         Bundle extras = getIntent().getExtras();
-
         recheckButtons = false;
+        buttonsPressed = 0;
         // Initialize views by ID
         timerTextView = findViewById(R.id.timer);
+        graceTimerTextView = findViewById(R.id.timer2);
         scoreTextView = findViewById(R.id.score);
         levelTextView = findViewById(R.id.level);
         questionTextView = findViewById(R.id.question);
         userGreeting = findViewById(R.id.questionAnswerUserGreeting);
-
         userGreeting.setText("Hello " + extras.getString("username"));
+
+        graceTimerTextView.setText("");
 
 
         for (int i = 0; i < 4; i++) {
@@ -56,6 +61,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         score = 0;
         level = 1;
 
+        scoreTextView.setText("Score: " + score);
         // Set up a sample question and answers
         displayQuestion("Sample question", new String[]{"Answer 1", "Answer 2", "Answer 3", "Answer 4"});
 
@@ -65,7 +71,31 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     // Handle answer selection and move to next question or end the quiz
-                    checkAnswer();
+
+
+                    if(picking2)
+                    {
+                        button.setBackgroundColor(getColor(R.color.titleBackground));
+                        picking2Buttons[buttonsPressed] = button;
+                        buttonsPressed++;
+                        if(buttonsPressed == 2)
+                        {
+                            checkAnswer();
+                        }
+
+                    }
+                    else if(secondChancing)
+                    {
+                        if(button != trueAnswer)
+                        {
+                            button.setBackgroundColor(getColor(R.color.teal_700));
+                        }
+                        secondChancing = false;
+                    }
+                    else
+                    {
+                        checkAnswer();
+                    }
                 }
             });
         }
@@ -89,11 +119,14 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                         if(button != trueAnswer)
                         {
                             button.setEnabled(false);
+                            button.setBackgroundColor(getResources().getColor(R.color.teal_700));
                             recheckButtons = true;
                             break;
                         }
-
                     }
+
+                    lifelineButtons[0].setEnabled(false);
+                    lifelineButtons[0].setBackgroundColor(getResources().getColor(R.color.teal_700));
                 }
             });
 
@@ -107,7 +140,9 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         lifelineButtons[2].setOnClickListener(new View.OnClickListener() { //lifeline 3 restore timer
             @Override
             public void onClick(View view) {
-                timer *= 1.50;
+                startTimer(10000, graceTimerTextView, false);
+                lifelineButtons[2].setEnabled(false);
+                lifelineButtons[2].setBackgroundColor(getResources().getColor(R.color.teal_700));
             }
         });
 
@@ -121,32 +156,50 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                     if(answerButtons[n] != trueAnswer)
                     {
                         answerButtons[n].setEnabled(false);
+                        answerButtons[n].setBackgroundColor(getResources().getColor(R.color.teal_700));
                         recheckButtons = true;
                         l++;
                     }
                 }
                 while(l != 2);
 
+                lifelineButtons[3].setEnabled(false);
+                lifelineButtons[3].setBackgroundColor(getResources().getColor(R.color.teal_700));
             }
         });
 
-        lifelineButtons[4].setOnClickListener(new View.OnClickListener() { //lifeline 5 double dip
+        lifelineButtons[4].setOnClickListener(new View.OnClickListener() { //lifeline 5 2nd chance
             @Override
             public void onClick(View view) {
-
+                secondChancing = true;
+                lifelineButtons[4].setEnabled(false);
+                lifelineButtons[4].setBackgroundColor(getResources().getColor(R.color.teal_700));
             }
         });
 
-        lifelineButtons[5].setOnClickListener(new View.OnClickListener() { //lifeline 6
+        lifelineButtons[5].setOnClickListener(new View.OnClickListener() { //lifeline 6 pick 2
             @Override
             public void onClick(View view) {
-
+                picking2 = true;
+                lifelineButtons[5].setEnabled(false);
+                lifelineButtons[5].setBackgroundColor(getResources().getColor(R.color.teal_700));
             }
         });
 
         // Start a sample timer
-        startTimer(10000);
+        startTimer(10000, timerTextView, true);
+
+
+
+
+//        if(!timerStatus && givenGrace)
+//        {
+//            // next question
+//            timerStatus = true;
+//            givenGrace = false;
+//        }
     }
+
 
     public void recheckAllButtons() //make sure to run this after choice is made/before next question is pulled
     {
@@ -154,12 +207,39 @@ public class QuestionAnswerActivity extends AppCompatActivity {
             if(!button.isEnabled())
             {
                 button.setEnabled(true);
+                button.setBackgroundColor(getResources().getColor(R.color.purple_200));
             }
         }
     }
 
     // Assigns background color to show the correct answer and incorrect answers
     private void checkAnswer() {
+
+        if(picking2)
+        {
+            if(picking2Buttons.length == 2)
+            {
+                for (Button but: picking2Buttons
+                     ) {
+                    if(but == trueAnswer)
+                    {
+                        //assign points chose right answer
+                        break;
+                    }
+                }
+                revealAnswer();
+                picking2 = false;
+            }
+        }
+        else
+        {
+            revealAnswer();
+        }
+
+    }
+
+    private void revealAnswer()
+    {
         for (Button button : answerButtons) {
             if (button == trueAnswer) {
                 button.setBackgroundColor(getColor(R.color.green));
@@ -167,7 +247,29 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                 button.setBackgroundColor(getColor(R.color.red));
             }
         }
+
+        buttonsPressed = 0;
+        secondChancing = false;
+
+        score += assignPoints(20); //whatever points they gets for each lifeline send here
+        scoreTextView.setText("Score: " + score);
+
     }
+
+    private int assignPoints(int lifelinePointby)
+    {
+        int additionalPoints = 0;
+        for (Button lifeBut: lifelineButtons
+             ) {
+            if(lifeBut.isEnabled())
+            {
+                additionalPoints += lifelinePointby;
+            }
+        }
+
+        return additionalPoints;
+    }
+
     private void displayQuestion(String questionText, String[] answers) {
         questionTextView.setText(questionText);
         for (int i = 0; i < 4; i++) {
@@ -177,17 +279,25 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         trueAnswer = answerButtons[rand.nextInt(3)];
     }
 
-    private void startTimer(long timeMillis) {
+    private void startTimer(long timeMillis, TextView textV, boolean usingMainTimer) {
         new CountDownTimer(timeMillis, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
-                timerTextView.setText(String.format("%.1f", millisUntilFinished / 1000.0));
-                timer = millisUntilFinished;
+                textV.setText(String.format("%.1f", millisUntilFinished / 1000.0));
             }
 
             @Override
             public void onFinish() {
                 // Handle timer expiration
+
+                if(usingMainTimer)//automatically start grace  period
+                {
+                    startTimer(5000, graceTimerTextView, false);
+                }
+
+                //move to next question
+
+
             }
         }.start();
     }

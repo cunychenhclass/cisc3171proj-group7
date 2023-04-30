@@ -18,6 +18,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/timer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:text="10.0"
+        android:textColor="@color/teal_200"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -150,7 +161,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
             android:text="Lifeline 1"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <Button
@@ -162,7 +173,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
             android:text="Lifeline 2"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <Button
@@ -174,7 +185,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
             android:text="Lifeline 3"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <Button
@@ -186,7 +197,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
             android:text="Lifeline 4"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <Button
@@ -198,7 +209,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
             android:text="Lifeline 5"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <Button
@@ -210,7 +221,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
             android:text="Lifeline 6"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp" />
     </GridLayout>
 

@@ -16,19 +16,19 @@ import java.util.Random;
 
 public class LeaderboardSelect extends AppCompatActivity {
 
-    LeaderboardArrayList cate10;
-    LeaderboardArrayList cate20;
-    LeaderboardArrayList cate30;
-    LeaderboardArrayList cate40;
-    LeaderboardArrayList cate50;
-    LeaderboardArrayList cate100;
+//    LeaderboardArrayList cate10;
+//    LeaderboardArrayList cate20;
+//    LeaderboardArrayList cate30;
+//    LeaderboardArrayList cate40;
+//    LeaderboardArrayList cate50;
+//    LeaderboardArrayList cate100;
 
     ArrayList<Button> buttonsList = new ArrayList<>();
-    LeaderboardArrayList categoryusing = new LeaderboardArrayList();
-    int categoryNum;
-    String[] username;
-    int[] score;
-    float[] time;
+//    LeaderboardArrayList categoryusing = new LeaderboardArrayList();
+    int categoryNum = 0;
+//    String[] username;
+//    int[] score;
+//    float[] time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +48,12 @@ public class LeaderboardSelect extends AppCompatActivity {
         buttonsList.add(leaderboard50);
         buttonsList.add(leaderboard100);
 
-        if(categoryusing != null)
-        {
-            username = categoryusing.username;
-            score = categoryusing.score;
-            time = categoryusing.time;
-        }
+//        if(categoryusing != null)
+//        {
+//            username = categoryusing.username;
+//            score = categoryusing.score;
+//            time = categoryusing.time;
+//        }
 
         ImageButton returnButton = (ImageButton)findViewById(R.id.returnButtonLeaderboard);
         Button selectButton = (Button)findViewById(R.id.nextLeaderboardSelectButton);
@@ -67,7 +67,7 @@ public class LeaderboardSelect extends AppCompatActivity {
         leaderboard10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                categoryusing = cate10;
+//                categoryusing = cate10;
                 colorChange(leaderboard10);
                 categoryNum = 10;
 
@@ -77,7 +77,7 @@ public class LeaderboardSelect extends AppCompatActivity {
         leaderboard20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                categoryusing = cate20;
+//                categoryusing = cate20;
                 colorChange(leaderboard20);
                 categoryNum = 20;
 
@@ -87,7 +87,7 @@ public class LeaderboardSelect extends AppCompatActivity {
         leaderboard30.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                categoryusing = cate30;
+//                categoryusing = cate30;
                 colorChange(leaderboard30);
                 categoryNum = 30;
             }
@@ -96,7 +96,7 @@ public class LeaderboardSelect extends AppCompatActivity {
         leaderboard40.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                categoryusing = cate40;
+//                categoryusing = cate40;
                 colorChange(leaderboard40);
                 categoryNum = 40;
             }
@@ -105,7 +105,7 @@ public class LeaderboardSelect extends AppCompatActivity {
         leaderboard50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                categoryusing = cate50;
+//                categoryusing = cate50;
                 colorChange(leaderboard50);
                 categoryNum = 50;
             }
@@ -114,28 +114,29 @@ public class LeaderboardSelect extends AppCompatActivity {
         leaderboard100.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                categoryusing = cate100;
+//                categoryusing = cate100;
                 colorChange(leaderboard100);
                 categoryNum = 100;
             }
         });
 
-        username = categoryusing.username;
-        score = categoryusing.score;
-        time = categoryusing.time;
+//        username = categoryusing.username;
+//        score = categoryusing.score;
+//        time = categoryusing.time;
 
         selectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //use category int
-                Bundle bundle = new Bundle();
-                Intent intent = new Intent(LeaderboardSelect.this, SpecificLeaderboard.class);
-                bundle.putInt("categoryNum", categoryNum);
-                bundle.putStringArray("NamesList", username);
-                bundle.putIntArray("ScoreList", score);
-                bundle.putFloatArray("TimeList", time);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                if(categoryNum != 0)
+                {
+                    Intent intent = new Intent(LeaderboardSelect.this, SpecificLeaderboard.class);
+                    intent.putExtra("categoryNum", categoryNum);
+//                bundle.putStringArray("NamesList", username);
+//                bundle.putIntArray("ScoreList", score);
+//                bundle.putFloatArray("TimeList", time);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -151,25 +152,6 @@ public class LeaderboardSelect extends AppCompatActivity {
         category_.setBackgroundColor(getResources().getColor(R.color.purple_200));
     }
 
-    public LeaderboardArrayList submitUser(int cat)
-    {
-        switch (cat)
-        {
-            case 10:
-                return cate10;
-            case 20:
-                return cate20;
-            case 30:
-                return cate30;
-            case 40:
-                return cate40;
-            case 50:
-                return cate50;
-            case 100:
-                return cate100;
-        }
-        return null;
-    }
 
     public void arrayListHandler(LeaderboardArrayList category, String Username_, int Score_, float time_)
     {
@@ -207,21 +189,3 @@ public class LeaderboardSelect extends AppCompatActivity {
 
 }
 
-class LeaderboardArrayList{ //used as a custom array type for the category lists
-    int size = 10;
-    String[] username = {"kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"};
-
-    int[] score = {1,2,3,4,5,6,7,8,9};
-
-    float[] time = {900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f};
-
-
-    public void scrubArrays()
-    {
-        username = null;
-        score = null;
-        time = null;
-    }
-
-
-}
