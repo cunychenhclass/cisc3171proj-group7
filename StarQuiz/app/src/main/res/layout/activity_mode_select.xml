@@ -19,7 +19,7 @@
         app:layout_constraintStart_toEndOf="@+id/ModeToInfoReturn"
         app:layout_constraintTop_toBottomOf="@+id/mode100"
         app:layout_constraintVertical_bias="0.698"
-        app:srcCompat="@android:drawable/star_on" />
+        app:srcCompat="@android:drawable/star_big_on" />
 
     <TextView
         android:id="@+id/ModeSelectTitle"
