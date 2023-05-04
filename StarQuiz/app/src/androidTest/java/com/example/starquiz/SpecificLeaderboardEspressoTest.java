@@ -50,6 +50,7 @@ public class SpecificLeaderboardEspressoTest {
         onView(withId(R.id.button10Leaderboard)).check(matches(isDisplayed()));
     }
 
+    // This is for the specific leadberboard user story Scenario 2
     @Test
     public void clickHomeButton() {
         onView(withId(R.id.button10Leaderboard)).perform(click());
