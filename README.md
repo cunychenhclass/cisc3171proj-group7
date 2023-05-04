@@ -86,3 +86,7 @@ and "Home Screen - Leaderboard Select Screen." As of the time of this writing, w
 "Question Screen - Answer," "Question Screen - Last Question," and "Specfic Leaderboard Screen." The other difficulty we faced is that most of our
 commits have not been marked in accordance to "Red-Green-Refactoring," as we didn't look at the assignment until we were already done with
 some of our user stories.
+
+## Second Iteration Report:
+
+## Design Pattern 
