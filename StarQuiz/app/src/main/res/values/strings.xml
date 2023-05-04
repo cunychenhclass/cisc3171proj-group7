@@ -2,9 +2,21 @@
     <string name="app_name">Star Quiz</string>
     <string name="returnButtonText">Return</string>
     <string name="okButtonText">OK</string>
-    <string name="descriptionInfo_rules">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam risus tellus, molestie vitae mi id, tempus euismod est. Cras in libero eu lectus accumsan pulvinar quis sit amet nunc. Vivamus pellentesque risus dolor, id dapibus purus sollicitudin sed. Maecenas ac nunc at arcu pellentesque varius ut id odio.
+    <string name="descriptionInfo_rules">Overview: Test your Star Trek knowledge across all series (up to a year ago). Race against time, answer correctly, and rack up points. Learn about timer, scoring, and lifeline mechanics in the following sections.
 
-        Pellentesque convallis consequat est sed gravida. Phasellus sagittis congue semper. Suspendisse viverra eros sagittis dolor interdum dignissim id eu tellus. Suspendisse fermentum metus ac tellus porta porta. Suspendisse tempus varius arcu, id laoreet quam eleifend ut. Maecenas dignissim efficitur diam vitae scelerisque.
+Star Trek Series: Read questions faster by recognizing short forms for each Star Trek series.
+TOS: The Original Series
+TAS: The Animated Series
+TNG: The Next Generation
+DS9: Deep Space Nine
+VOY: Voyager
+ENT: Enterprise
+DIS: Discovery
+PIC: Picard
+LD: Lower Decks
+PRO: Prodigy
+SNW: Strange New Worlds
+SA: Starfleet Academy
     </string>
     <string name="info_rulesTitle">Info &amp; Rules</string>
     <string name="leaderboard_select">Leaderboard Select</string>
@@ -17,4 +29,7 @@
     <string name="_100">100</string>
     <string name="specificLeaderTitle">Title Here</string>
     <string name="returnHome">Return Home</string>
+    <string name="pick_of_questions_to_play">Pick # of questions to play</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
