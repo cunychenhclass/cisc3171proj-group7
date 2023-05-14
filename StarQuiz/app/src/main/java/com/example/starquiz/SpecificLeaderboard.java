@@ -26,7 +26,7 @@ public class SpecificLeaderboard extends AppCompatActivity {
     ArrayList<Integer> score;
     ArrayList<Float> time;
     String[] timeString;
-    String currUser;
+    String currUser = "";
     TextView categoryName;
     int categoryNum;
     LeaderboardArrayList categoryusing;
@@ -39,6 +39,13 @@ public class SpecificLeaderboard extends AppCompatActivity {
         categoryNum = bundle.getInt("categoryNum", categoryNum);
 
         submitUser(categoryNum);
+        if (bundle.containsKey("playerName")) {
+            String playerName = bundle.getString("playerName");
+            int playerScore = bundle.getInt("playerScore");
+            float playerTime = (float) bundle.getDouble("playerTime");
+            currUser = playerName;
+            categoryusing.addNewUser(playerName, playerScore, playerTime);
+        }
         //categoryusing.addNewUser("Max", 6, 1f);
 
         if(categoryusing != null)
@@ -62,7 +69,6 @@ public class SpecificLeaderboard extends AppCompatActivity {
 
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
-        currUser = "Kevin";
         // Return to leaderboard select screen
         if(username != null)
         {

@@ -414,16 +414,16 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         recheckAllButtons();
         questionIndex++;
 
-        if(questionIndex < 10)
+        if(questionIndex < 5)
         {
             runQuestions(questionIndex);
         }
         else {
-            Intent intent = new Intent(QuestionAnswerActivity.this, LeaderboardSelect.class);
+            Intent intent = new Intent(QuestionAnswerActivity.this, SpecificLeaderboard.class);
             intent.putExtra("playerName", username);//username
             intent.putExtra("playerScore", score);//score
             intent.putExtra("playerTime", timeTracked);//time
-            intent.putExtra("playerMode", modeNumUsing); //mode
+            intent.putExtra("categoryNum", modeNumUsing); //mode
 
 
             startActivity(intent);
