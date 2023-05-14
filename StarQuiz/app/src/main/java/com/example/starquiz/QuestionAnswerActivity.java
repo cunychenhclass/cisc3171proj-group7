@@ -25,7 +25,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     private Button trueAnswer;
     private Button[] lifelineButtons = new Button[6];
     private String username;
-    private int modeUsing;
+    private int modeNumUsing;
     private int score;
     private int level;
     private int questionIndex;
@@ -46,9 +46,10 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question_answer);
 
         Bundle extras = getIntent().getExtras();
-        modeUsing = extras.getInt("modeVer");
+        Intent intent = getIntent();
+        modeNumUsing = intent.getIntExtra("modeVer", modeNumUsing);
         getDiffMode modeUsing = new getDiffMode();
-        DQ = modeUsing.returnQuestions();
+        DQ = modeUsing.returnQuestions(modeNumUsing);
 
         recheckButtons = false;
         buttonsPressed = 0;
@@ -422,7 +423,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
             intent.putExtra("playerName", username);//username
             intent.putExtra("playerScore", score);//score
             intent.putExtra("playerTime", timeTracked);//time
-            intent.putExtra("playerMode", modeUsing); //mode
+            intent.putExtra("playerMode", modeNumUsing); //mode
 
 
             startActivity(intent);
@@ -480,7 +481,7 @@ class questionAnswerOptions
 class getDiffMode
 {
     //difficulty 10
-    questionAnswerOptions[] d10List = new questionAnswerOptions[10];
+
     String[] D10W1 = {"B", "C", "D"};
     questionAnswerOptions D10Q1 = new questionAnswerOptions("Answer is A", "A", D10W1);
     String[] D10W2 = {"A", "C", "D"};
@@ -491,30 +492,61 @@ class getDiffMode
     questionAnswerOptions D10Q4 = new questionAnswerOptions("Answer is D", "D", D10W4);
     String[] D10W5 = {"1", "2", "3"};
     questionAnswerOptions D10Q5 = new questionAnswerOptions("Answer is 4", "4", D10W5);
-    String[] D10W6 = {"1", "2", "4"};
-    questionAnswerOptions D10Q6 = new questionAnswerOptions("Answer is 3", "3", D10W6);
-    String[] D10W7 = {"1", "3", "4"};
-    questionAnswerOptions D10Q7 = new questionAnswerOptions("Answer is 2", "2", D10W7);
-    String[] D10W8 = {"2", "3", "4"};
-    questionAnswerOptions D10Q8 = new questionAnswerOptions("Answer is 1", "1", D10W8);
-    String[] D10W9 = {"0", "1", "10"};
-    questionAnswerOptions D10Q9 = new questionAnswerOptions("Answer is 010", "010", D10W9);
-    String[] D10W10 = {"0", "010", "10"};
-    questionAnswerOptions D10Q10 = new questionAnswerOptions("Answer is 1", "1", D10W10);
 
-    public difficultyQuestions returnQuestions()
+
+
+    String[] D20W1 = {"1", "2", "4"};
+    questionAnswerOptions D20Q1 = new questionAnswerOptions("Answer is 3", "3", D20W1);
+    String[] D20W2 = {"1", "3", "4"};
+    questionAnswerOptions D20Q2 = new questionAnswerOptions("Answer is 2", "2", D20W2);
+    String[] D20W3 = {"2", "3", "4"};
+    questionAnswerOptions D20Q3 = new questionAnswerOptions("Answer is 1", "1", D20W3);
+    String[] D20W4 = {"0", "1", "10"};
+    questionAnswerOptions D20Q4 = new questionAnswerOptions("Answer is 010", "010", D20W4);
+    String[] D20W5 = {"0", "010", "10"};
+    questionAnswerOptions D20Q5 = new questionAnswerOptions("Answer is 1", "1", D20W5);
+
+
+
+    String[] D30W1 = {"1", "2", "4"};
+    questionAnswerOptions D30Q1 = new questionAnswerOptions("Answer is 3", "3", D30W1);
+    String[] D30W2 = {"1", "3", "4"};
+    questionAnswerOptions D30Q2 = new questionAnswerOptions("Answer is 2", "2", D30W2);
+    String[] D30W3 = {"2", "3", "4"};
+    questionAnswerOptions D30Q3 = new questionAnswerOptions("Answer is 1", "1", D30W3);
+    String[] D30W4 = {"0", "1", "10"};
+    questionAnswerOptions D30Q4 = new questionAnswerOptions("Answer is 010", "010", D30W4);
+    String[] D30W5 = {"0", "010", "10"};
+    questionAnswerOptions D30Q5 = new questionAnswerOptions("Answer is 1", "1", D30W5);
+
+    public difficultyQuestions returnQuestions(int mode)
     {
-        d10List[0] = D10Q1;
-        d10List[1] = D10Q2;
-        d10List[2] = D10Q3;
-        d10List[3] = D10Q4;
-        d10List[4] = D10Q5;
-        d10List[5] = D10Q6;
-        d10List[6] = D10Q7;
-        d10List[7] = D10Q8;
-        d10List[8] = D10Q9;
-        d10List[9] = D10Q10;
-        return new difficultyQuestions(10, d10List);
+        questionAnswerOptions[] dList = new questionAnswerOptions[5];
+        switch(mode)
+        {
+            case(10):
+                dList[0] = D10Q1;
+                dList[1] = D10Q2;
+                dList[2] = D10Q3;
+                dList[3] = D10Q4;
+                dList[4] = D10Q5;
+                break;
+            case(20):
+                dList[0] = D20Q1;
+                dList[1] = D20Q2;
+                dList[2] = D20Q3;
+                dList[3] = D20Q4;
+                dList[4] = D20Q5;
+                break;
+            case(30):
+                dList[0] = D30Q1;
+                dList[1] = D30Q2;
+                dList[2] = D30Q3;
+                dList[3] = D30Q4;
+                dList[4] = D30Q5;
+                break;
+        }
 
+        return new difficultyQuestions(20, dList);
     }
 }
