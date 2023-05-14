@@ -299,7 +299,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         buttonsPressed = 0;
         secondChancing = false;
 
-        score += assignLifelinePoints(0); //whatever points they gets for each lifeline send here
+        score += assignLifelinePoints(5); //whatever points they gets for each lifeline send here
         scoreTextView.setText("Score: " + score);
 
         stopTimer();
