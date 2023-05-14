@@ -160,7 +160,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="Lifeline 1"
+            android:text="Remove 1"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -172,9 +172,9 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="Lifeline 2"
+            android:text="Skip Question"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/lifeline3"
@@ -184,9 +184,9 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="Lifeline 3"
+            android:text="Restore Timer"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/lifeline4"
@@ -196,7 +196,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="Lifeline 4"
+            android:text="50/50"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -208,9 +208,9 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="Lifeline 5"
+            android:text="2nd Chance"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/lifeline6"
@@ -220,7 +220,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
             android:backgroundTint="@color/buttonBackground"
-            android:text="Lifeline 6"
+            android:text="Pick 2"
             android:textColor="@color/white"
             android:textSize="16sp" />
     </GridLayout>
