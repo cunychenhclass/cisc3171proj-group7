@@ -470,81 +470,84 @@ class getDiffMode
 {
     //difficulty 10
 
-    String[] D10W1 = {"B", "C", "D"};
-    questionAnswerOptions D10Q1 = new questionAnswerOptions("Answer is A", "A", D10W1);
-    String[] D10W2 = {"A", "C", "D"};
-    questionAnswerOptions D10Q2 = new questionAnswerOptions("Answer is B", "B", D10W2);
-    String[] D10W3 = {"B", "A", "D"};
-    questionAnswerOptions D10Q3 = new questionAnswerOptions("Answer is C", "C", D10W3);
-    String[] D10W4 = {"B", "C", "A"};
-    questionAnswerOptions D10Q4 = new questionAnswerOptions("Answer is D", "D", D10W4);
-    String[] D10W5 = {"1", "2", "3"};
-    questionAnswerOptions D10Q5 = new questionAnswerOptions("Answer is 4", "4", D10W5);
+    String[] D10W1 = {"Sega", "SquareEnix", "Xbox"};
+    questionAnswerOptions D10Q1 = new questionAnswerOptions("Which company released the iconic video game 'Donkey Kong'?", "Nintendo", D10W1);
+    String[] D10W2 = {"Football", "FPS", "Baseball"};
+    questionAnswerOptions D10Q2 = new questionAnswerOptions("What kind of sport is played on the Gran Turismo video games series?", "Racing", D10W2);
+    String[] D10W3 = {"15", "6", "5"};
+    questionAnswerOptions D10Q3 = new questionAnswerOptions("How many Grand Theft Auto games have been released?", "16", D10W3);
+    String[] D10W4 = {"343", "Microsoft", "Sega"};
+    questionAnswerOptions D10Q4 = new questionAnswerOptions("What is the name of the original developers of the 'Halo' series?", "Bungie", D10W4);
+    String[] D10W5 = {"Industrial Era", "Medieval Era", "Modern Era"};
+    questionAnswerOptions D10Q5 = new questionAnswerOptions("Red Dead Redemption is based in what historical time?", "Western Era", D10W5);
 
 
 
-    String[] D20W1 = {"1", "2", "4"};
-    questionAnswerOptions D20Q1 = new questionAnswerOptions("Answer is 3", "3", D20W1);
-    String[] D20W2 = {"1", "3", "4"};
-    questionAnswerOptions D20Q2 = new questionAnswerOptions("Answer is 2", "2", D20W2);
-    String[] D20W3 = {"2", "3", "4"};
-    questionAnswerOptions D20Q3 = new questionAnswerOptions("Answer is 1", "1", D20W3);
-    String[] D20W4 = {"0", "1", "10"};
-    questionAnswerOptions D20Q4 = new questionAnswerOptions("Answer is 010", "010", D20W4);
-    String[] D20W5 = {"0", "010", "10"};
-    questionAnswerOptions D20Q5 = new questionAnswerOptions("Answer is 1", "1", D20W5);
+    String[] D20W1 = {"Austrailia", "Russia", "France"};
+    questionAnswerOptions D20Q1 = new questionAnswerOptions("The Minecraft game was created by a developer from which country?", "Sweden", D20W1);
+    String[] D20W2 = {"Coins", "Onion Rings", "Money"};
+    questionAnswerOptions D20Q2 = new questionAnswerOptions("what must the player collect in the game 'Sonic the Hedgehog'?", "Rings", D20W2);
+    String[] D20W3 = {"Vampires", "Mutants", "Cryptids"};
+    questionAnswerOptions D20Q3 = new questionAnswerOptions("Dead Rising 2 was a 2010 game about killing which type of evil force?", "Zombies", D20W3);
+    String[] D20W4 = {"Epona", "Zelda", "Gannon"};
+    questionAnswerOptions D20Q4 = new questionAnswerOptions("What is the name of the hero of 'The Legend of Zelda'?", "Link", D20W4);
+    String[] D20W5 = {"Side Scroller", "Platformer", "Visual Novel"};
+    questionAnswerOptions D20Q5 = new questionAnswerOptions("\n" +
+            "Doom' is considered what type of video game?", "First Person Shooter", D20W5);
 
 
 
-    String[] D30W1 = {"1", "2", "4"};
-    questionAnswerOptions D30Q1 = new questionAnswerOptions("Answer is 3", "3", D30W1);
-    String[] D30W2 = {"1", "3", "4"};
-    questionAnswerOptions D30Q2 = new questionAnswerOptions("Answer is 2", "2", D30W2);
-    String[] D30W3 = {"2", "3", "4"};
-    questionAnswerOptions D30Q3 = new questionAnswerOptions("Answer is 1", "1", D30W3);
-    String[] D30W4 = {"0", "1", "10"};
-    questionAnswerOptions D30Q4 = new questionAnswerOptions("Answer is 010", "010", D30W4);
-    String[] D30W5 = {"0", "010", "10"};
-    questionAnswerOptions D30Q5 = new questionAnswerOptions("Answer is 1", "1", D30W5);
+    String[] D30W1 = {"Gamecube", "Sega Genesis", "Gameboy"};
+    questionAnswerOptions D30Q1 = new questionAnswerOptions("\n" +
+            "What was the name of the video game console launched by Sega in 1998?", "Dreamcast", D30W1);
+    String[] D30W2 = {"Mario Mario", "Plumber", "Hero"};
+    questionAnswerOptions D30Q2 = new questionAnswerOptions("What was 'Mario' first known as in 'Donkey Kong'?", "Jumpman", D30W2);
+    String[] D30W3 = {"AC3", "AC2", "AC1"};
+    questionAnswerOptions D30Q3 = new questionAnswerOptions("Which 'Assassin's Creed' game is set in Florence, Italy?", "AC Brotherhood", D30W3);
+    String[] D30W4 = {"Save The Town", "Purge The Undead", "Clear The Castle"};
+    questionAnswerOptions D30Q4 = new questionAnswerOptions("What is the main goal in the first 'Castlevania'?", "Kill Dracula", D30W4);
+    String[] D30W5 = {"Lord of the Rings Online", "Final Fantasy 14", "Elder Scrolls Online"};
+    questionAnswerOptions D30Q5 = new questionAnswerOptions("\n" +
+            "Wrath of the Lich King' was a 2008 expansion pack for which series?", "World of Warcraft", D30W5);
 
 
 
-    String[] D40W1 = {"1", "2", "4"};
-    questionAnswerOptions D40Q1 = new questionAnswerOptions("Answer is 3", "3", D40W1);
-    String[] D40W2 = {"1", "3", "4"};
-    questionAnswerOptions D40Q2 = new questionAnswerOptions("Answer is 2", "2", D40W2);
-    String[] D40W3 = {"2", "3", "4"};
-    questionAnswerOptions D40Q3 = new questionAnswerOptions("Answer is 1", "1", D40W3);
-    String[] D40W4 = {"0", "1", "10"};
-    questionAnswerOptions D40Q4 = new questionAnswerOptions("Answer is 010", "010", D40W4);
-    String[] D40W5 = {"0", "010", "10"};
-    questionAnswerOptions D40Q5 = new questionAnswerOptions("Answer is 1", "1", D40W5);
+    String[] D40W1 = {"Tokyo", "Pyongyang", "California"};
+    questionAnswerOptions D40Q1 = new questionAnswerOptions("Where are Nintendo Original headquarters located?", "Kyoto", D40W1);
+    String[] D40W2 = {"California", "New York", "Wisconsin"};
+    questionAnswerOptions D40Q2 = new questionAnswerOptions("Watch Dogs 2' is set in which are of the United States?", "San Francisco", D40W2);
+    String[] D40W3 = {"Dead Island", "Mad World", "Cyberpunk"};
+    questionAnswerOptions D40Q3 = new questionAnswerOptions("In which game can you find Raccoon City?", "Resident Evil", D40W3);
+    String[] D40W4 = {"Warframe", "Destiny", "Starcraft"};
+    questionAnswerOptions D40Q4 = new questionAnswerOptions("What video game franchise does Rooster Teeth use for their show “Red vs. Blue?”", "Halo", D40W4);
+    String[] D40W5 = {"Popcorn", "Orange", "Cheese"};
+    questionAnswerOptions D40Q5 = new questionAnswerOptions("Pacman was designed to resemble which food?", "Pizza", D40W5);
 
 
 
-    String[] D50W1 = {"1", "2", "4"};
-    questionAnswerOptions D50Q1 = new questionAnswerOptions("Answer is 3", "3", D50W1);
-    String[] D50W2 = {"1", "3", "4"};
-    questionAnswerOptions D50Q2 = new questionAnswerOptions("Answer is 2", "2", D50W2);
-    String[] D50W3 = {"2", "3", "4"};
-    questionAnswerOptions D50Q3 = new questionAnswerOptions("Answer is 1", "1", D50W3);
-    String[] D50W4 = {"0", "1", "10"};
-    questionAnswerOptions D50Q4 = new questionAnswerOptions("Answer is 010", "010", D50W4);
-    String[] D50W5 = {"0", "010", "10"};
-    questionAnswerOptions D50Q5 = new questionAnswerOptions("Answer is 1", "1", D50W5);
+    String[] D50W1 = {"XIV", "II", "I"};
+    questionAnswerOptions D50Q1 = new questionAnswerOptions("The character 'Cloud' was from which of the Final Fantasy game?", "VII", D50W1);
+    String[] D50W2 = {"Nephew", "Rival", "Brother"};
+    questionAnswerOptions D50Q2 = new questionAnswerOptions("What was the relation of Kratos with Zeus in the game God of War?", "Son", D50W2);
+    String[] D50W3 = {"Raccoon", "Badger", "Tasmanian Devil"};
+    questionAnswerOptions D50Q3 = new questionAnswerOptions("Crash is a video game character who is a genetically mutated type of what Animal?", "Bandicoot", D50W3);
+    String[] D50W4 = {"James", "Ridley", "John"};
+    questionAnswerOptions D50Q4 = new questionAnswerOptions("What is Solid Snake’s real name?", "David", D50W4);
+    String[] D50W5 = {"Rocky", "Buddy", "Mister"};
+    questionAnswerOptions D50Q5 = new questionAnswerOptions("What is the name of the recurring dog NPC in the Fallout series?", "Dogmeat", D50W5);
 
 
 
-    String[] D100W1 = {"1", "2", "4"};
-    questionAnswerOptions D100Q1 = new questionAnswerOptions("Answer is 3", "3", D100W1);
-    String[] D100W2 = {"1", "3", "4"};
-    questionAnswerOptions D100Q2 = new questionAnswerOptions("Answer is 2", "2", D100W2);
-    String[] D100W3 = {"2", "3", "4"};
-    questionAnswerOptions D100Q3 = new questionAnswerOptions("Answer is 1", "1", D100W3);
-    String[] D100W4 = {"0", "1", "10"};
-    questionAnswerOptions D100Q4 = new questionAnswerOptions("Answer is 010", "010", D100W4);
-    String[] D100W5 = {"0", "010", "10"};
-    questionAnswerOptions D100Q5 = new questionAnswerOptions("Answer is 1", "1", D100W5);
+    String[] D100W1 = {"Monster Hunter", "Jet Set Radio", "Crazy Taxi"};
+    questionAnswerOptions D100Q1 = new questionAnswerOptions("What was the last game to be released on the Sega Dreamcast?", "Puyo Puyo Fever", D100W1);
+    String[] D100W2 = {"Killer 7", "Resident Evil 1", "Sonic"};
+    questionAnswerOptions D100Q2 = new questionAnswerOptions("What was the first game to introduce a proper saving system?", "The Legend of Zelda", D100W2);
+    String[] D100W3 = {"Dog", "Hawk", "Donkey"};
+    questionAnswerOptions D100Q3 = new questionAnswerOptions("What animal was Yoshi originally supposed to be?", "Horse", D100W3);
+    String[] D100W4 = {"Exact", "20x", "5x"};
+    questionAnswerOptions D100Q4 = new questionAnswerOptions("How much bigger than Earth is Minecraft’s map?", "18x", D100W4);
+    String[] D100W5 = {"Pac-Man", "MineSweeper", "Pong"};
+    questionAnswerOptions D100Q5 = new questionAnswerOptions("What game has been ported the most?", "Tetris", D100W5);
 
     public difficultyQuestions returnQuestions(int mode)
     {
