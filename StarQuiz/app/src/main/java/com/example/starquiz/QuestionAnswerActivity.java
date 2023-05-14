@@ -24,6 +24,8 @@ public class QuestionAnswerActivity extends AppCompatActivity {
 
     private Button trueAnswer;
     private Button[] lifelineButtons = new Button[6];
+    private String username;
+    private int modeUsing;
     private int score;
     private int level;
     private int questionIndex;
@@ -43,10 +45,11 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_answer);
 
+        Bundle extras = getIntent().getExtras();
+        modeUsing = extras.getInt("modeVer");
         getDiffMode modeUsing = new getDiffMode();
         DQ = modeUsing.returnQuestions();
 
-        Bundle extras = getIntent().getExtras();
         recheckButtons = false;
         buttonsPressed = 0;
         // Initialize views by ID
@@ -56,7 +59,9 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         levelTextView = findViewById(R.id.level);
         questionTextView = findViewById(R.id.question);
         userGreeting = findViewById(R.id.questionAnswerUserGreeting);
-        userGreeting.setText("Hello " + extras.getString("username"));
+
+        username = extras.getString("username");
+        userGreeting.setText("Hello " + username);
 
         graceTimerTextView.setText("");
 
@@ -414,6 +419,12 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         }
         else {
             Intent intent = new Intent(QuestionAnswerActivity.this, LeaderboardSelect.class);
+            intent.putExtra("playerName", username);//username
+            intent.putExtra("playerScore", score);//score
+            intent.putExtra("playerTime", timeTracked);//time
+            intent.putExtra("playerMode", modeUsing); //mode
+
+
             startActivity(intent);
         }
 
