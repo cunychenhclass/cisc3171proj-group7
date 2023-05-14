@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class QuestionAnswerActivity extends AppCompatActivity {
 
+    private QuizController quizControl;
     private TextView timerTextView;
     private TextView graceTimerTextView;
     private TextView scoreTextView;
