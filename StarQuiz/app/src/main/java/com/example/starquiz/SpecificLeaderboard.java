@@ -12,18 +12,19 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SpecificLeaderboard extends AppCompatActivity {
 
-    LeaderboardArrayList cate10;
-    LeaderboardArrayList cate20;
-    LeaderboardArrayList cate30;
-    LeaderboardArrayList cate40;
-    LeaderboardArrayList cate50;
-    LeaderboardArrayList cate100;
-    String[] username;
-    int[] score;
-    float[] time;
+    LeaderboardArrayList cate10 = new LeaderboardArrayList();
+    LeaderboardArrayList cate20 = new LeaderboardArrayList();
+    LeaderboardArrayList cate30 = new LeaderboardArrayList();
+    LeaderboardArrayList cate40 =new LeaderboardArrayList();
+    LeaderboardArrayList cate50 = new LeaderboardArrayList();
+    LeaderboardArrayList cate100 = new LeaderboardArrayList();
+    ArrayList<String> username;
+    ArrayList<Integer> score;
+    ArrayList<Float> time;
     String[] timeString;
     String currUser;
     TextView categoryName;
@@ -49,19 +50,13 @@ public class SpecificLeaderboard extends AppCompatActivity {
             time = categoryusing.time;
         }
 
-
-        ImageButton homeButton = findViewById(R.id.specificLeaderboardHomeButton);
-
-
         if(time != null)
         {
-            timeString = new String[time.length];
-            for (int i = 0; i < time.length; i++) {
-                timeString[i] = Float.toString(time[i]);
+            timeString = new String[time.size()];
+            for (int i = 0; i < time.size(); i++) {
+                timeString[i] = Float.toString(time.get(i));
             }
         }
-
-
         
         Button returnButton = findViewById(R.id.specificLeaderboardReturnButton);
         categoryName = findViewById(R.id.specificLeaderboardTitleText);
@@ -72,12 +67,12 @@ public class SpecificLeaderboard extends AppCompatActivity {
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
         currUser = "Kevin";
         // Return to leaderboard select screen
-        if(score != null)
+        if(username != null)
         {
         // Populating the leaderboard with dummy data
         // It should be using the database once its implemented
-            for (int i = 0; i < username.length; i++) {
-                mainLeaderboard.addView(createNewRow(i + 1, username[i], score[i], timeString[i]));
+            for (int i = 0; i < username.size(); i++) {
+                mainLeaderboard.addView(createNewRow(i + 1, username.get(i), score.get(i), timeString[i]));
             }
         }
 
@@ -91,6 +86,7 @@ public class SpecificLeaderboard extends AppCompatActivity {
             }
         });
 
+        ImageButton homeButton = findViewById(R.id.specificLeaderboardHomeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,39 +134,36 @@ public class SpecificLeaderboard extends AppCompatActivity {
 
     public void submitUser(int cat)
     {
-//        switch (cat)
-//        {
-//            case 10:
-//                categoryusing = cate10;
-//                break;
-//            case 20:
-//                categoryusing = cate20;
-//                break;
-//            case 30:
-//                categoryusing = cate30;
-//                break;
-//            case 40:
-//                categoryusing = cate40;
-//                break;
-//            case 50:
-//                categoryusing = cate50;
-//                break;
-//            case 100:
-//                categoryusing = cate100;
-//                break;
-//        }
+        switch (cat)
+        {
+            case 10:
+                categoryusing = cate10;
+                break;
+            case 20:
+                categoryusing = cate20;
+                break;
+            case 30:
+                categoryusing = cate30;
+                break;
+            case 40:
+                categoryusing = cate40;
+                break;
+            case 50:
+                categoryusing = cate50;
+                break;
+            case 100:
+                categoryusing = cate100;
+                break;
+        }
     }
 }
 
 
 class LeaderboardArrayList{ //used as a custom array type for the category lists
     int size = 10;
-    String[] username = {"kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"};
-
-    int[] score = {1,2,3,4,5,6,7,8,9};
-
-    float[] time = {900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f};
-
+    ArrayList<String> username = new ArrayList<String>(Arrays.asList("kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"));
+    ArrayList<Integer> score = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));
+    ArrayList<Float> time = new ArrayList<Float>(Arrays.asList(900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f));
 
     public void scrubArrays()
     {
@@ -179,6 +172,21 @@ class LeaderboardArrayList{ //used as a custom array type for the category lists
         time = null;
     }
 
+    public void addNewUser(String newUser, int newScore, float newTime) {
+        for (int i = 0; i < score.size(); i++) {
+            if (newScore > score.get(i)) {
+                username.add(i, newUser);
+                score.add(i, newScore);
+                time.add(i, newTime);
+                size++;
+                return;
+            }
+        }
+        username.add(newUser);
+        score.add(newScore);
+        time.add(newTime);
+        size++;
+    }
 
 }
 

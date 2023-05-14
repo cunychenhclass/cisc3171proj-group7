@@ -1,18 +1,14 @@
 package com.example.starquiz;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Random;
 
 public class LeaderboardSelect extends AppCompatActivity {
 
@@ -153,26 +149,26 @@ public class LeaderboardSelect extends AppCompatActivity {
     }
 
 
-    public void arrayListHandler(LeaderboardArrayList category, String Username_, int Score_, float time_)
-    {
-        for(int i = 0; i < category.username.length; i++)
-        {
-            if(category.username[i] == Username_)
-            {
-                if(category.score[i] < Score_)
-                {
-                    category.score[i] = Score_;
-                    category.time[i] = time_;
-                }
-            }
-            else
-            {
-                category.username[category.username.length + 1] = Username_;
-                category.score[category.username.length + 1] = Score_;
-                category.time[category.username.length + 1] = time_;
-            }
-        }
-    }
+//    public void arrayListHandler(LeaderboardArrayList category, String Username_, int Score_, float time_)
+//    {
+//        for(int i = 0; i < category.username.length; i++)
+//        {
+//            if(category.username[i] == Username_)
+//            {
+//                if(category.score[i] < Score_)
+//                {
+//                    category.score[i] = Score_;
+//                    category.time[i] = time_;
+//                }
+//            }
+//            else
+//            {
+//                category.username[category.username.length + 1] = Username_;
+//                category.score[category.username.length + 1] = Score_;
+//                category.time[category.username.length + 1] = time_;
+//            }
+//        }
+//    }
 
 //    public void testStocks(LeaderboardArrayList category)
 //    {
