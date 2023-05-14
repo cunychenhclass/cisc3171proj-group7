@@ -519,6 +519,45 @@ class getDiffMode
     String[] D30W5 = {"0", "010", "10"};
     questionAnswerOptions D30Q5 = new questionAnswerOptions("Answer is 1", "1", D30W5);
 
+
+
+    String[] D40W1 = {"1", "2", "4"};
+    questionAnswerOptions D40Q1 = new questionAnswerOptions("Answer is 3", "3", D40W1);
+    String[] D40W2 = {"1", "3", "4"};
+    questionAnswerOptions D40Q2 = new questionAnswerOptions("Answer is 2", "2", D40W2);
+    String[] D40W3 = {"2", "3", "4"};
+    questionAnswerOptions D40Q3 = new questionAnswerOptions("Answer is 1", "1", D40W3);
+    String[] D40W4 = {"0", "1", "10"};
+    questionAnswerOptions D40Q4 = new questionAnswerOptions("Answer is 010", "010", D40W4);
+    String[] D40W5 = {"0", "010", "10"};
+    questionAnswerOptions D40Q5 = new questionAnswerOptions("Answer is 1", "1", D40W5);
+
+
+
+    String[] D50W1 = {"1", "2", "4"};
+    questionAnswerOptions D50Q1 = new questionAnswerOptions("Answer is 3", "3", D50W1);
+    String[] D50W2 = {"1", "3", "4"};
+    questionAnswerOptions D50Q2 = new questionAnswerOptions("Answer is 2", "2", D50W2);
+    String[] D50W3 = {"2", "3", "4"};
+    questionAnswerOptions D50Q3 = new questionAnswerOptions("Answer is 1", "1", D50W3);
+    String[] D50W4 = {"0", "1", "10"};
+    questionAnswerOptions D50Q4 = new questionAnswerOptions("Answer is 010", "010", D50W4);
+    String[] D50W5 = {"0", "010", "10"};
+    questionAnswerOptions D50Q5 = new questionAnswerOptions("Answer is 1", "1", D50W5);
+
+
+
+    String[] D100W1 = {"1", "2", "4"};
+    questionAnswerOptions D100Q1 = new questionAnswerOptions("Answer is 3", "3", D100W1);
+    String[] D100W2 = {"1", "3", "4"};
+    questionAnswerOptions D100Q2 = new questionAnswerOptions("Answer is 2", "2", D100W2);
+    String[] D100W3 = {"2", "3", "4"};
+    questionAnswerOptions D100Q3 = new questionAnswerOptions("Answer is 1", "1", D100W3);
+    String[] D100W4 = {"0", "1", "10"};
+    questionAnswerOptions D100Q4 = new questionAnswerOptions("Answer is 010", "010", D100W4);
+    String[] D100W5 = {"0", "010", "10"};
+    questionAnswerOptions D100Q5 = new questionAnswerOptions("Answer is 1", "1", D100W5);
+
     public difficultyQuestions returnQuestions(int mode)
     {
         questionAnswerOptions[] dList = new questionAnswerOptions[5];
@@ -545,8 +584,29 @@ class getDiffMode
                 dList[3] = D30Q4;
                 dList[4] = D30Q5;
                 break;
+            case(40):
+                dList[0] = D40Q1;
+                dList[1] = D40Q2;
+                dList[2] = D40Q3;
+                dList[3] = D40Q4;
+                dList[4] = D40Q5;
+                break;
+            case(50):
+                dList[0] = D50Q1;
+                dList[1] = D50Q2;
+                dList[2] = D50Q3;
+                dList[3] = D50Q4;
+                dList[4] = D50Q5;
+                break;
+            case(100):
+                dList[0] = D100Q1;
+                dList[1] = D100Q2;
+                dList[2] = D100Q3;
+                dList[3] = D100Q4;
+                dList[4] = D100Q5;
+                break;
         }
 
-        return new difficultyQuestions(20, dList);
+        return new difficultyQuestions(mode, dList);
     }
 }
