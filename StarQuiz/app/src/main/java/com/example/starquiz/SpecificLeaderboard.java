@@ -180,6 +180,12 @@ class LeaderboardArrayList{ //used as a custom array type for the category lists
                 time.add(i, newTime);
                 size++;
                 return;
+            } else if (newScore == score.get(i) && newTime > time.get(i)) {
+                username.add(i, newUser);
+                score.add(i, newScore);
+                time.add(i, newTime);
+                size++;
+                return;
             }
         }
         username.add(newUser);
