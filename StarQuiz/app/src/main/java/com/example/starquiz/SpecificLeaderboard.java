@@ -16,12 +16,12 @@ import java.util.Arrays;
 
 public class SpecificLeaderboard extends AppCompatActivity {
 
-    LeaderboardArrayList cate10 = new LeaderboardArrayList();
-    LeaderboardArrayList cate20 = new LeaderboardArrayList();
-    LeaderboardArrayList cate30 = new LeaderboardArrayList();
-    LeaderboardArrayList cate40 =new LeaderboardArrayList();
-    LeaderboardArrayList cate50 = new LeaderboardArrayList();
-    LeaderboardArrayList cate100 = new LeaderboardArrayList();
+    static LeaderboardArrayList cate10 = new LeaderboardArrayList();
+    static LeaderboardArrayList cate20 = new LeaderboardArrayList();
+    static LeaderboardArrayList cate30 = new LeaderboardArrayList();
+    static LeaderboardArrayList cate40 =new LeaderboardArrayList();
+    static LeaderboardArrayList cate50 = new LeaderboardArrayList();
+    static LeaderboardArrayList cate100 = new LeaderboardArrayList();
     ArrayList<String> username;
     ArrayList<Integer> score;
     ArrayList<Float> time;
@@ -29,19 +29,17 @@ public class SpecificLeaderboard extends AppCompatActivity {
     String currUser;
     TextView categoryName;
     int categoryNum;
-    LeaderboardArrayList categoryusing = new LeaderboardArrayList();
+    LeaderboardArrayList categoryusing;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_specific_leaderboard);
 
-        Intent intent = getIntent();
-        categoryNum = intent.getIntExtra("categoryNum", categoryNum);
-//        username = bundle.getStringArray("NamesList");
-//        score = bundle.getIntArray("ScoreList");
-//        time = bundle.getFloatArray("TimeList");
+        Bundle bundle = getIntent().getExtras();
+        categoryNum = bundle.getInt("categoryNum", categoryNum);
 
         submitUser(categoryNum);
+        //categoryusing.addNewUser("Max", 6, 1f);
 
         if(categoryusing != null)
         {
@@ -62,7 +60,6 @@ public class SpecificLeaderboard extends AppCompatActivity {
         categoryName = findViewById(R.id.specificLeaderboardTitleText);
         categoryName.setText(categoryNum + " Questions Leaderboard");
 
-        //TODO edit the title textview so that it doesn't expand all the way to the end of the screen
 
         TableLayout mainLeaderboard = findViewById(R.id.specificLeaderboardTable);
         currUser = "Kevin";
@@ -75,14 +72,11 @@ public class SpecificLeaderboard extends AppCompatActivity {
                 mainLeaderboard.addView(createNewRow(i + 1, username.get(i), score.get(i), timeString[i]));
             }
         }
-
-//        for (int i = 1; i <= 100; i++) {
-//            mainLeaderboard.addView(createNewRow(i, "Test User", 500, "00:05:30"));
-//        }
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(SpecificLeaderboard.this, LeaderboardSelect.class);
+                startActivity(intent);
             }
         });
 
@@ -162,7 +156,7 @@ public class SpecificLeaderboard extends AppCompatActivity {
 class LeaderboardArrayList{ //used as a custom array type for the category lists
     int size = 10;
     ArrayList<String> username = new ArrayList<String>(Arrays.asList("kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"));
-    ArrayList<Integer> score = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9));
+    ArrayList<Integer> score = new ArrayList<Integer>(Arrays.asList(9,8,7,6,5,4,3,2,1));
     ArrayList<Float> time = new ArrayList<Float>(Arrays.asList(900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f));
 
     public void scrubArrays()
