@@ -332,7 +332,6 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         int rA = rand.nextInt(3); //0-4
         trueAnswer = answerButtons[rA];
         trueAnswer.setText(RightAnswer);
-        trueAnswer.setBackgroundColor(getColor(R.color.green));
 
         int displayIndex = 0;
         for (int i = 0; i < 4; i++) {

@@ -162,8 +162,8 @@ public class SpecificLeaderboard extends AppCompatActivity {
 class LeaderboardArrayList{ //used as a custom array type for the category lists
     int size = 10;
     ArrayList<String> username = new ArrayList<String>(Arrays.asList("kyle", "jones", "James", "Tyler", "Kevin", "alex", "richie", "sasha", "beau"));
-    ArrayList<Integer> score = new ArrayList<Integer>(Arrays.asList(9,8,7,6,5,4,3,2,1));
-    ArrayList<Float> time = new ArrayList<Float>(Arrays.asList(900.0f,800.0f,700.0f,600.0f,500.0f,400.0f,300.0f,200.0f,100.0f));
+    ArrayList<Integer> score = new ArrayList<Integer>(Arrays.asList(45,40,35,30,20,15,10,5,5));
+    ArrayList<Float> time = new ArrayList<Float>(Arrays.asList(10.512f,31.345f,9.134f,4.418f,15.516f,21.323f,2.298f,18.989f,7.615f));
 
     public void scrubArrays()
     {
