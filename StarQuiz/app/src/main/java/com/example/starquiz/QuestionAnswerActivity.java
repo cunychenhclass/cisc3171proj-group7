@@ -25,11 +25,12 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     private Button trueAnswer;
     private Button[] lifelineButtons = new Button[6];
     private String username;
-    private int modeNumUsing;
+    private int modeNumUsing = 0;
     private int score;
     private int level;
     private int questionIndex;
     private boolean recheckButtons;
+    private boolean timerIsRestored = false;
     private double timerStuff;
     private double timeTracked;
     private boolean picking2 = false;
@@ -150,19 +151,18 @@ public class QuestionAnswerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // skip question in database
                 stopTimer();
-                recheckAllButtons();
-                level++;
-                levelTextView.setText("Q" + level);
-                questionIndex++;
-                runQuestions(questionIndex);
+                lifelineButtons[1].setEnabled(false);
+                lifelineButtons[1].setBackgroundColor(getResources().getColor(R.color.teal_700));
             }
         });
 
         lifelineButtons[2].setOnClickListener(new View.OnClickListener() { //lifeline 3 restore timer
             @Override
             public void onClick(View view) {
+                timerIsRestored = true;
                 stopTimer();
-                startTimer(10000, graceTimerTextView, false);
+                timerIsRestored = false;
+                startTimer(10000, timerTextView, false);
                 lifelineButtons[2].setEnabled(false);
                 lifelineButtons[2].setBackgroundColor(getResources().getColor(R.color.teal_700));
             }
@@ -175,7 +175,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                 do {
                     Random rand = new Random();
                     int n = rand.nextInt(3);
-                    if(answerButtons[n] != trueAnswer)
+                    if(answerButtons[n] != trueAnswer && answerButtons[n].isEnabled())
                     {
                         answerButtons[n].setEnabled(false);
                         answerButtons[n].setBackgroundColor(getResources().getColor(R.color.teal_700));
@@ -228,6 +228,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         PickedButton = null;
 
         disableButtons(true);
+        //buttonChecked = false;
 
         answerButtons[0].setBackgroundColor(getResources().getColor(R.color.buttonBackground));
         answerButtons[1].setBackgroundColor(getResources().getColor(R.color.buttonBackground));
@@ -243,20 +244,13 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         answerButtons[2].setEnabled(b);
         answerButtons[3].setEnabled(b);
 
-        lifelineButtons[0].setEnabled(b);
-        lifelineButtons[1].setEnabled(b);
-        lifelineButtons[2].setEnabled(b);
-        lifelineButtons[3].setEnabled(b);
-        lifelineButtons[4].setEnabled(b);
-        lifelineButtons[5].setEnabled(b);
+//        lifelineButtons[0].setEnabled(b);
+//        lifelineButtons[1].setEnabled(b);
+//        lifelineButtons[2].setEnabled(b);
+//        lifelineButtons[3].setEnabled(b);
+//        lifelineButtons[4].setEnabled(b);
+//        lifelineButtons[5].setEnabled(b);
 
-//        for (int i = 0; i < answerButtons.length; i++) {
-//            answerButtons[i].setEnabled(b);
-//        }
-//
-//        for (int i = 0; i < lifelineButtons.length; i++) {
-//            lifelineButtons[i].setEnabled(b);
-//        }
     }
 
     // Assigns background color to show the correct answer and incorrect answers
@@ -272,12 +266,9 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                     {
                         disableButtons(false);
                         //assign points chose right answer
-                        if(!buttonChecked)
-                        {
-                            score += assignPoints(DQ.Num);
-                        }
+                        score += modeNumUsing;
 
-                        buttonChecked = true;
+                        //buttonChecked = true;
                         break;
                     }
                 }
@@ -291,13 +282,8 @@ public class QuestionAnswerActivity extends AppCompatActivity {
             {
                 disableButtons(false);
 
-                if(!buttonChecked)
-                {
-                    score += assignPoints(DQ.Num);
-                }
+                score += modeNumUsing;
 
-
-                buttonChecked = true;
             }
             revealAnswer();
         }
@@ -306,18 +292,18 @@ public class QuestionAnswerActivity extends AppCompatActivity {
 
     private void revealAnswer()
     {
-        for (Button button : answerButtons) {
-            if (button == trueAnswer) {
-                button.setBackgroundColor(getColor(R.color.green));
-            } else {
-                button.setBackgroundColor(getColor(R.color.red));
-            }
-        }
+//        for (Button button : answerButtons) {
+//            if (button == trueAnswer) {
+//                button.setBackgroundColor(getColor(R.color.green));
+//            } else {
+//                button.setBackgroundColor(getColor(R.color.red));
+//            }
+//        }
 
         buttonsPressed = 0;
         secondChancing = false;
 
-        score += assignPoints(20); //whatever points they gets for each lifeline send here
+        score += assignLifelinePoints(0); //whatever points they gets for each lifeline send here
         scoreTextView.setText("Score: " + score);
 
         stopTimer();
@@ -328,11 +314,12 @@ public class QuestionAnswerActivity extends AppCompatActivity {
 
     }
 
-    private int assignPoints(int lifelinePointby)
+    private int assignLifelinePoints(int lifelinePointby)
     {
         int additionalPoints = 0;
+
         for (Button lifeBut: lifelineButtons
-             ) {
+        ) {
             if(lifeBut.isEnabled())
             {
                 additionalPoints += lifelinePointby;
@@ -371,7 +358,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     {
 
         displayQuestion(DQ.questionAnswerList[index].QuestionPrompting, DQ.questionAnswerList[index].IncorrectAnswers, DQ.questionAnswerList[index].CorrectAnswer);
-        buttonChecked = false;
+        //buttonChecked = false;
         startTimer(10000, timerTextView, true);
     }
 
@@ -388,18 +375,19 @@ public class QuestionAnswerActivity extends AppCompatActivity {
             public void onFinish() {
                 // Handle timer expiration
 
-                if(usingMainTimer)//automatically start grace  period
-                {
-                    startTimer(5000, graceTimerTextView, false);
-                }
+//                if(usingMainTimer)//automatically start grace  period
+//                {
+//                    startTimer(3000, graceTimerTextView, false);
+//                    timerIsRestored = false;
+//                }
 
                 //move to next question
-                recheckAllButtons();
-                level++;
-                levelTextView.setText("Q" + level);
-                questionIndex++;
-                runQuestions(questionIndex);
-
+//                recheckAllButtons();
+//                level++;
+//                levelTextView.setText("Q" + level);
+//                questionIndex++;
+//                runQuestions(questionIndex);
+                stopTimer();
 
             }
         }.start();
@@ -407,12 +395,16 @@ public class QuestionAnswerActivity extends AppCompatActivity {
 
     private void stopTimer()
     {
-        timeTracked += timerStuff;
+        if(!timerIsRestored)
+        {
+            timeTracked += timerStuff;
+            level++;
+            levelTextView.setText("Q" + level);
+            recheckAllButtons();
+            questionIndex++;
+        }
+
         countDownTimer.cancel();
-        level++;
-        levelTextView.setText("Q" + level);
-        recheckAllButtons();
-        questionIndex++;
 
         if(questionIndex < 5)
         {
