@@ -81,8 +81,14 @@ Having no creative designers for the design of what the app will look like that 
 ## Iteration Report:
 During this iteration, we were able to create the layouts for all of the user stories/screens that we would need to deliver our MVP.
 We also prioritized writing functional code for transitioning between the different screens as well as allowing the screens to retain
-user information. The user stories that are being prioritized in this iteration is "Home Screen - Enter Guest Name", "Info Screen",
-and "Home Screen - Leaderboard Select Screen." As of the time of this writing, we have not been able to complete "Question Screen - Lifeline,"
+user information. The user stories that are being prioritized in this iteration is "Info Screen" and "Home Screen - Leaderboard Select Screen." 
+As of the time of this writing, we have not been able to complete "Question Screen - Lifeline,"
 "Question Screen - Answer," "Question Screen - Last Question," and "Specfic Leaderboard Screen." The other difficulty we faced is that most of our
 commits have not been marked in accordance to "Red-Green-Refactoring," as we didn't look at the assignment until we were already done with
 some of our user stories.
+
+## Second Iteration Report:
+For the second Iteration, we were able to close out the user stories for the "Home Screen - Enter Guest Name" and "Question Screen - Answer". For the final iteration, the last user stories to be finished are "Question Screen - Last Question" and "Specfic Leaderboard Screen.". Additional user stores such as "Question Screen - Lifeline", "Question Screen - Timer" and "Question Screen - Score" are all dependant on the final code included for Last Question, and will be closed simultaniously once Last Question is also completed. Test cases checking for the use of username and interaction of question scene buttons are in place for the test cases. 
+
+## Design Pattern 
+For this project, we have chosen to implement the model-view-controller design pattern, with the model being a "Quiz" question object, the view being the "QuizView" interface, and the controller being the "QuizController" class. In the context of our Star Quiz application, this design pattern will essentially serve to transition from question to question as the user answers questions. The controller will appropriately update the display of the QuestionAnswerActivity so that it will display a new question and an update score value.   
