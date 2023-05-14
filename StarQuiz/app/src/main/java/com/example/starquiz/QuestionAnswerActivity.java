@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.Random;
+import java.util.logging.Logger;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +23,6 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     private TextView questionTextView;
     private TextView userGreeting;
     private Button[] answerButtons = new Button[4];
-
     private Button trueAnswer;
     private Button[] lifelineButtons = new Button[6];
     private String username;
@@ -45,7 +46,6 @@ public class QuestionAnswerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_answer);
-
         Bundle extras = getIntent().getExtras();
         Intent intent = getIntent();
         modeNumUsing = intent.getIntExtra("modeVer", modeNumUsing);
@@ -66,6 +66,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         userGreeting.setText("Hello " + username);
 
         graceTimerTextView.setText("");
+
 
 
         for (int i = 0; i < 4; i++) {
@@ -118,7 +119,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        if(button.isSelected() && PickedButton == null)
+                        if(PickedButton == null)
                         {
                             PickedButton = button;
                         }
@@ -255,19 +256,16 @@ public class QuestionAnswerActivity extends AppCompatActivity {
 
     // Assigns background color to show the correct answer and incorrect answers
     private void checkAnswer() {
-
         if(picking2)
         {
             if(picking2Buttons.length == 2)
             {
-                for (Button but: picking2Buttons
-                     ) {
+                for (Button but: picking2Buttons) {
                     if(but == trueAnswer)
                     {
                         disableButtons(false);
                         //assign points chose right answer
                         score += modeNumUsing;
-
                         //buttonChecked = true;
                         break;
                     }
@@ -278,12 +276,10 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         }
         else
         {
-            if(PickedButton == trueAnswer )
+            if(PickedButton == trueAnswer)
             {
                 disableButtons(false);
-
                 score += modeNumUsing;
-
             }
             revealAnswer();
         }
@@ -336,6 +332,7 @@ public class QuestionAnswerActivity extends AppCompatActivity {
         int rA = rand.nextInt(3); //0-4
         trueAnswer = answerButtons[rA];
         trueAnswer.setText(RightAnswer);
+        trueAnswer.setBackgroundColor(getColor(R.color.green));
 
         int displayIndex = 0;
         for (int i = 0; i < 4; i++) {
