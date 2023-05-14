@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class SpecificLeaderboard extends AppCompatActivity {
 
-        LeaderboardArrayList cate10;
+    LeaderboardArrayList cate10;
     LeaderboardArrayList cate20;
     LeaderboardArrayList cate30;
     LeaderboardArrayList cate40;
@@ -138,27 +138,27 @@ public class SpecificLeaderboard extends AppCompatActivity {
 
     public void submitUser(int cat)
     {
-        switch (cat)
-        {
-            case 10:
-                categoryusing = cate10;
-                break;
-            case 20:
-                categoryusing = cate20;
-                break;
-            case 30:
-                categoryusing = cate30;
-                break;
-            case 40:
-                categoryusing = cate40;
-                break;
-            case 50:
-                categoryusing = cate50;
-                break;
-            case 100:
-                categoryusing = cate100;
-                break;
-        }
+//        switch (cat)
+//        {
+//            case 10:
+//                categoryusing = cate10;
+//                break;
+//            case 20:
+//                categoryusing = cate20;
+//                break;
+//            case 30:
+//                categoryusing = cate30;
+//                break;
+//            case 40:
+//                categoryusing = cate40;
+//                break;
+//            case 50:
+//                categoryusing = cate50;
+//                break;
+//            case 100:
+//                categoryusing = cate100;
+//                break;
+//        }
     }
 }
 
