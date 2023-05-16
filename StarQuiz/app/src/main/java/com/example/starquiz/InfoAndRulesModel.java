@@ -7,11 +7,13 @@ public class InfoAndRulesModel {
     List<String> infoPages;
     int currentPageIndex;
 
+    //Allows for pages to be stored in a list.
     public InfoAndRulesModel(List<String> infoPages) {
         this.infoPages = infoPages;
         currentPageIndex = 0;
     }
 
+    //Helps keep track of which page to display
     public String getCurrentPage() {
         return infoPages.get(currentPageIndex);
     }

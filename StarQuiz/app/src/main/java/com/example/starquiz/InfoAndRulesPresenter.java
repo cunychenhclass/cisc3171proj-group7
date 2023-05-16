@@ -25,6 +25,7 @@ public class InfoAndRulesPresenter {
         showCurrentPage();
     }
 
+    //This is so that the user doesn't click on the previous button when they're only at the beginning of the activity and vice-versa
     private void updateButtonsVisibility() {
         if (model.currentPageIndex == 0) {
             view.hidePreviousButton();
@@ -39,27 +40,32 @@ public class InfoAndRulesPresenter {
         }
     }
 
+    //Displays the current page
     private void showCurrentPage() {
         String currentPage = model.getCurrentPage();
         view.showInfoPage(currentPage);
     }
 
+    //Returns to home screen when clicked on
     public void onReturnButtonClicked() {
         view.finishActivity();
     }
 
+    //"Turns the page" to the next section of the rules
     public void onNextButtonClicked() {
         model.goToNextPage();
         updateButtonsVisibility();
         showCurrentPage();
     }
 
+    //"Turns the page" to the previous section of the rules
     public void onPreviousButtonClicked() {
         model.goToPreviousPage();
         updateButtonsVisibility();
         showCurrentPage();
     }
 
+    //Proceeds to Mode Select screen
     public void onOkButtonClicked() {
         view.navigateToModeSelectActivity(extras);
     }
