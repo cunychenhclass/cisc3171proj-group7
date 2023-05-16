@@ -73,14 +73,4 @@
         app:layout_constraintTop_toBottomOf="@id/leaderboardsButton" />
 
     <!-- Button to navigate to the Themes screen -->
-    <Button
-        android:id="@+id/themesButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Themes"
-        android:backgroundTint="@color/buttonBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/infoRulesButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

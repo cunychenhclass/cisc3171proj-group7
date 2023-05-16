@@ -34,7 +34,6 @@ public class HomeActivity extends AppCompatActivity {
         Button enterButton = findViewById(R.id.enterButton);
         Button leaderboardsButton = findViewById(R.id.leaderboardsButton);
         Button infoRulesButton = findViewById(R.id.infoRulesButton);
-        Button themesButton = findViewById(R.id.themesButton);
 
         // Initialize bannedUsernames set
         bannedUsernames = new TreeSet<>();
@@ -77,15 +76,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, InfoAndRulesActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        // Set onClickListener for themesButton to navigate to ThemesActivity
-        themesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Intent intent = new Intent(HomeActivity.this, ModeSelect.class);
-               startActivity(intent);
             }
         });
     }
