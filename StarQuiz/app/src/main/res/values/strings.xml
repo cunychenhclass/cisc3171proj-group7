@@ -2,12 +2,12 @@
     <string name="app_name">Star Quiz</string>
     <string name="returnButtonText">Return</string>
     <string name="okButtonText">OK</string>
-    <string name="descriptionInfo_rules">Overview: Test your Video Game knowledge across all historical accounts
-        . Race against time, answer correctly, and rack up points.
-        Learn about timer, scoring, and lifeline mechanics in the following sections.
+    <string name="descriptionInfo_rules">
+        Overview: Test your Video Game knowledge across all historical accounts.
+        Race against time, answer correctly, and rack up points.
+        Learn about lifeline mechanics in the next page.
         Each category is scaled by difficulty, leaving the last category at the bottom to challenge yourself.
         Earn more points depending on the difficulty of the Questions.
-
     </string>
     <string name="info_rulesTitle">Info &amp; Rules</string>
     <string name="leaderboard_select">Leaderboard Select</string>
@@ -22,4 +22,11 @@
     <string name="returnHome">Return Home</string>
     <string name="pick_of_questions_to_play">Pick # of questions to play</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pick_your_difficulty">Pick your difficulty</string>
+    <string name="insane">Insane</string>
+    <string name="very_hard">Very Hard</string>
+    <string name="hard">Hard</string>
+    <string name="medium">Medium</string>
+    <string name="normal">Normal</string>
+    <string name="easy">Easy</string>
 </resources>

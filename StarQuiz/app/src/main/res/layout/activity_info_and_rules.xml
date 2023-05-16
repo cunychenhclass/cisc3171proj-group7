@@ -45,8 +45,9 @@
         android:layout_height="wrap_content"
         android:width="292dp"
         android:text="@string/descriptionInfo_rules"
+        android:textAlignment="textStart"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -82,4 +83,25 @@
         app:layout_constraintEnd_toEndOf="@+id/infoAndRulesTitleView"
         app:layout_constraintStart_toStartOf="@+id/infoAndRulesTitleView"
         app:layout_constraintTop_toTopOf="@+id/infoAndRulesTitleView" />
+
+    <ImageButton
+        android:id="@+id/InfoNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/infoAndRulesDesc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_next" />
+
+    <ImageButton
+        android:id="@+id/InfoPrevious"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/infoAndRulesDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_previous" />
 </androidx.constraintlayout.widget.ConstraintLayout>
