@@ -16,6 +16,7 @@ public class ModeSelect extends AppCompatActivity {
 
     List<Button> modes = new ArrayList<>();
 
+    int ModeUsing = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public class ModeSelect extends AppCompatActivity {
                 mode50.setActivated(false);
                 mode100.setActivated(false);
 
+                ModeUsing = 10;
                 colorChange(mode10);
             }
         });
@@ -67,7 +69,7 @@ public class ModeSelect extends AppCompatActivity {
                 mode40.setActivated(false);
                 mode50.setActivated(false);
                 mode100.setActivated(false);
-
+                ModeUsing = 20;
                 colorChange(mode20);
             }
         });
@@ -81,7 +83,7 @@ public class ModeSelect extends AppCompatActivity {
                 mode40.setActivated(false);
                 mode50.setActivated(false);
                 mode100.setActivated(false);
-
+                ModeUsing = 30;
                 colorChange(mode30);
             }
         });
@@ -95,7 +97,7 @@ public class ModeSelect extends AppCompatActivity {
                 mode40.setActivated(true);
                 mode50.setActivated(false);
                 mode100.setActivated(false);
-
+                ModeUsing = 40;
                 colorChange(mode40);
             }
         });
@@ -109,7 +111,7 @@ public class ModeSelect extends AppCompatActivity {
                 mode40.setActivated(false);
                 mode50.setActivated(true);
                 mode100.setActivated(false);
-
+                ModeUsing = 50;
                 colorChange(mode50);
             }
         });
@@ -123,7 +125,7 @@ public class ModeSelect extends AppCompatActivity {
                 mode40.setActivated(false);
                 mode50.setActivated(false);
                 mode100.setActivated(true);
-
+                ModeUsing = 100;
                 colorChange(mode100);
             }
         });
@@ -171,6 +173,7 @@ public class ModeSelect extends AppCompatActivity {
                 if (selectedButton != null) {
                     Intent intent = new Intent(ModeSelect.this, Countdown.class); //This should start the highlighted mode when ok is pressed.
                     intent.putExtras(getIntent());
+                    intent.putExtra("modeVer", ModeUsing);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "You must select a mode", Toast.LENGTH_LONG).show(); //If a mode isn't selected, tell the user to pick something.
