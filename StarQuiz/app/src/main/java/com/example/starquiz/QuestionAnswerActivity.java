@@ -468,7 +468,7 @@ class questionAnswerOptions
 
 class getDiffMode
 {
-    //difficulty 10
+    //difficulty Easy
 
     String[] D10W1 = {"Sega", "SquareEnix", "Xbox"};
     questionAnswerOptions D10Q1 = new questionAnswerOptions("Which company released the iconic video game 'Donkey Kong'?", "Nintendo", D10W1);
@@ -483,7 +483,7 @@ class getDiffMode
 
 
 
-    String[] D20W1 = {"Austrailia", "Russia", "France"};
+    String[] D20W1 = {"Australia", "Russia", "France"};
     questionAnswerOptions D20Q1 = new questionAnswerOptions("The Minecraft game was created by a developer from which country?", "Sweden", D20W1);
     String[] D20W2 = {"Coins", "Onion Rings", "Money"};
     questionAnswerOptions D20Q2 = new questionAnswerOptions("what must the player collect in the game 'Sonic the Hedgehog'?", "Rings", D20W2);
