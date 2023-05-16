@@ -90,8 +90,16 @@ some of our user stories.
 ## Second Iteration Report:
 For the second Iteration, we were able to close out the user stories for the "Home Screen - Enter Guest Name" and "Question Screen - Answer". For the final iteration, the last user stories to be finished are "Question Screen - Last Question" and "Specfic Leaderboard Screen.". Additional user stores such as "Question Screen - Lifeline", "Question Screen - Timer" and "Question Screen - Score" are all dependant on the final code included for Last Question, and will be closed simultaniously once Last Question is also completed. Test cases checking for the use of username and interaction of question scene buttons are in place for the test cases. 
 
-## Design Pattern 
+## Design Pattern - MVC Pattern
 For this project, we have chosen to implement the model-view-controller design pattern, with the model being a "Quiz" question object, the view being the "QuizView" interface, and the controller being the "QuizController" class. In the context of our Star Quiz application, this design pattern will essentially serve to transition from question to question as the user answers questions. The controller will appropriately update the display of the QuestionAnswerActivity so that it will display a new question and an update score value.   
 
 ## Third Iteration Report:
 For the Third and final iteration, the "QuestionAnswerActivity" and "Question Screen - Lifeline" user stories were completed, along it connecting the "Question Screen - Timer" and "Question Screen - Score" to complete the project to be in a working state. The QuestionAnswerActivity is able to iterate between questions and lead the user as well as the data they have procressed straight to be saved onto the specific leaderboard select of the difficulty they have chosen. To summerize the analysis, due to the sudden departure of a team member, it became the responsibility of the others to take over their tasks, and the difficulty it came with understanding what corners to cut or code to make in order to deliver in time. There are alot of minor warning that do not impose on the core code, as it is mostly name formatting that the system perfers over whats written, yet the code will still run. The code slightly deviated from the structure yet has still achieved its goal.
+
+## Design Pattern - MVP Pattern
+The Model View Presenter design pattern will be used for the InfoAndRulesActivity so that the user can easily press the previous/next buttons on the screen to 
+turn the pages and be able to read through the text necessary to understand the rules of the quiz app. The model is "InfoAndRulesModel," which acts as the logic or "skeleton"
+of sorts to give the previous/next buttons functionality and to update the textview of the rules. View is "InfoAndRulesView," which defines the methods to display the U.I. of 
+the app. The Presenter is "InfoAndRulesPresenter," which is the main core that receives methods from the view and then uses the model to give the methods functionality
+based on the rules written in the model. Finally, the InfoAndRulesActivity implements the view and interacts with the presenter so that the screen can be updated. The model will
+also be created in here so that any number of pages can be added to the list.
