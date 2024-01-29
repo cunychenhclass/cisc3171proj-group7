@@ -3,7 +3,7 @@
 ## Group 7
 
 Max Yedid, maxyedid1@gmail.com, maxyedid
-Victor Feng He, victorfeng2000@gmail.com, DeanEvil
+Victor Feng He, victorfeng2000@gmail.com, victor-feng-he
 Jaden Guevara, officialjadenguevara@gmail.com, JGuevara626
 Kamil Skorupa, k.a.skorupa85@gmail.com, Kamil-S85
 
